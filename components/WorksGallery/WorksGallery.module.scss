@@ -1,0 +1,120 @@
+// Gallery container with horizontal scroll
+.galleryContainer {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.horizontalGallery {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 0 1rem;
+
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.galleryItem {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+  }
+}
+
+// Responsive sizes
+// 4 slides, 3 gaps of 30px
+@media (min-width: 1281px) {
+  .galleryItem {
+    width: calc((100% - 90px) / 4);
+  }
+}
+// 3 slides, 2 gaps of 30px
+@media (min-width: 769px) and (max-width: 1280px) {
+  .galleryItem {
+    width: calc((100% - 60px) / 3);
+  }
+}
+// 2 slides, 1 gap of 30px
+@media (max-width: 768px) {
+  .galleryItem {
+    width: calc((100% - 30px) / 2);
+  }
+}
+
+// Navigation arrows
+.navArrowLeft,
+.navArrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 1;
+  padding: 1rem;
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #3d2516;
+  border: none;
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-weight: bold;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-50%) scale(1.1);
+    background-color: #fff;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  &.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.navArrowLeft {
+  left: 0.5rem;
+}
+
+.navArrowRight {
+  right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .navArrowLeft,
+  .navArrowRight {
+    opacity: 0.7;
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+}

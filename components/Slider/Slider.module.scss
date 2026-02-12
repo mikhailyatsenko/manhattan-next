@@ -1,0 +1,208 @@
+.sliderContainer {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  background-color: #3d2516;
+}
+
+.horizontalSlider {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  height: 100%;
+
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.first-visit {
+  text-align: center;
+  justify-content: center;
+}
+
+.friends,
+.birthday {
+  text-align: left;
+  justify-content: flex-start;
+  @media (max-width: 767px) {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.slideItem {
+  scroll-snap-align: start;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.slideContent {
+  max-width: 1024px;
+  padding: 4rem 1rem;
+  line-height: 1.2;
+  h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    padding-bottom: 1rem;
+
+    @media (min-width: 1280px) {
+      font-size: 3.75rem;
+    }
+
+    @media (min-width: 1536px) {
+      font-size: 4.5rem;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 2.25rem;
+    }
+  }
+
+  .semibold {
+    font-weight: 600;
+    display: block;
+  }
+
+  button {
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+    padding: 0.625rem 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 0.125rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #3d2516;
+      background-color: #fff;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.navArrowLeft,
+.navArrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  padding: 1rem 0.5rem;
+  z-index: 3;
+  background-color: rgba(61, 37, 22, 0.5);
+  color: #d4af7a;
+  border: none;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+    background-color: rgba(61, 37, 22, 0.8);
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+.navArrowLeft {
+  left: 1rem;
+}
+
+.navArrowRight {
+  right: 1rem;
+}
+
+.sliderContainer:hover .navArrowLeft,
+.sliderContainer:hover .navArrowRight {
+  opacity: 1;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.paginationDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  &.active {
+    background-color: #fff;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navArrowLeft,
+  .navArrowRight {
+    opacity: 0.7;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .navArrowLeft {
+    left: 0.5rem;
+  }
+
+  .navArrowRight {
+    right: 0.5rem;
+  }
+
+  .slideContent {
+    button {
+      font-size: 1.25rem;
+    }
+  }
+}
