@@ -51,16 +51,22 @@ const Header = () => {
           <nav className="flex justify-between items-center">
             <div className="md:hidden w-1/4 md:w-auto flex text-3xl z-[6]">
               <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
-                <i className="fa-brands fa-whatsapp text-green-500" aria-hidden="true"></i>
+                <i
+                  className="fa-brands fa-whatsapp text-green-500"
+                  aria-hidden="true"
+                ></i>
               </a>
               <a className="ml-3" href="tel:+79263948050">
-                <i className="fa-solid fa-square-phone text-red-500" aria-hidden="true"></i>
+                <i
+                  className="fa-solid fa-square-phone text-red-500"
+                  aria-hidden="true"
+                ></i>
               </a>
             </div>
             <div className="flex items-center header-logo justify-center w-1/2 md:w-auto">
               <div className="menu-logo py-2 flex items-center">
                 <a href="#">
-                  <Image src="/img/logo.png" alt="Logo" width={60} height={60} />
+                  <img src="/img/logo.png" alt="Logo" />
                 </a>
               </div>
               <div className="text-center text-darkbrown md:text-2xl text-md font-normal px-1 md:px-2 cursor-default">
