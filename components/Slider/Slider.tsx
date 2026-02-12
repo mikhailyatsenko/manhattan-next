@@ -8,7 +8,6 @@ const sliderImage3 = "img/slide-3.jpg";
 const sliderImageSm1 = "img/slide-1-sm.webp";
 import styles from "./Slider.module.scss";
 
-
 const slides = [
   {
     id: "first-visit",
@@ -56,7 +55,9 @@ const Slider: React.FC = () => {
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [lastInteractionTime, setLastInteractionTime] = useState(Date.now());
-  const autoScrollIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const autoScrollIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
+    null,
+  );
   const isAutoScrollingRef = useRef(false);
 
   const resetAutoScrollTimer = useCallback(() => {
@@ -96,8 +97,6 @@ const Slider: React.FC = () => {
       scroller.removeEventListener("scroll", handleScroll);
     };
   }, [updateScrollState, resetAutoScrollTimer]);
-
-
 
   // Auto-scroll functionality
   useEffect(() => {

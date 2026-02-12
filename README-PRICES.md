@@ -68,8 +68,8 @@ components/Prices/Prices.tsx (React Component)
 ## 🔐 Безопасность
 
 - **Vercel (production):** Service Account credentials хранятся в переменной окружения `GOOGLE_SHEETS_CREDENTIALS`
-- **Локально:** используется файл `manhattan-487210-5ef58e0a375e.json` (добавлен в `.gitignore`)
-- Файл с credentials **не попадает** в Git репозиторий
+- **Локально:** используется файл `.env` с переменной `GOOGLE_SHEETS_CREDENTIALS` (добавлен в `.gitignore`)
+- Файл `.env` **не попадает** в Git репозиторий
 - Таблица доступна только Service Account с email `sheets-price@manhattan-487210.iam.gserviceaccount.com`
 
 ## 📦 Необходимые пакеты
@@ -97,7 +97,7 @@ components/Prices/Prices.tsx (React Component)
 # Установить зависимости
 npm install
 
-# Запустить dev сервер (credentials берутся из manhattan-487210-5ef58e0a375e.json)
+# Запустить dev сервер (credentials берутся из .env файла)
 npm run dev
 
 # Проверить API

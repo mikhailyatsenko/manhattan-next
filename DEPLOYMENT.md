@@ -19,13 +19,13 @@
 1. В настройках проекта перейдите в **Settings** → **Environment Variables**
 2. Добавьте новую переменную:
    - **Name**: `GOOGLE_SHEETS_CREDENTIALS`
-   - **Value**: Скопируйте **полное содержимое** файла `manhattan-487210-5ef58e0a375e.json`
+   - **Value**: Скопируйте **полное содержимое** JSON с credentials из вашего `.env` файла
    - **Environment**: Production, Preview, Development
 
 **Как получить значение:**
 ```bash
 # Выполните эту команду в терминале (в корне проекта):
-cat manhattan-487210-5ef58e0a375e.json | tr -d '\n'
+grep GOOGLE_SHEETS_CREDENTIALS .env | cut -d '=' -f 2-
 ```
 
 Скопируйте весь вывод и вставьте в Value на Vercel.
@@ -68,18 +68,22 @@ cat manhattan-487210-5ef58e0a375e.json | tr -d '\n'
 
 ## Локальная разработка
 
-Просто запустите dev сервер:
+1. Создайте файл `.env` в корне проекта (он в `.gitignore`):
+```bash
+GOOGLE_SHEETS_CREDENTIALS={"type":"service_account","project_id":"manhattan-487210",...}
+```
+
+2. Запустите dev сервер:
 ```bash
 npm install
 npm run dev
 ```
 
-Credentials для локальной разработки находятся в файле `manhattan-487210-5ef58e0a375e.json` (он в `.gitignore`).
-
-**Важно:** Если у вас нет этого файла, попросите его у владельца проекта или создайте свой Service Account в Google Cloud Console.
+**Важно:** Если у вас нет credentials, попросите их у владельца проекта или создайте свой Service Account в Google Cloud Console.
 
 ## Безопасность
 
 ⚠️ **Важно**: 
-- Файл `manhattan-487210-5ef58e0a375e.json` добавлен в `.gitignore` и **не должен** попадать в Git!
+- Файл `.env` добавлен в `.gitignore` и **не должен** попадать в Git!
 - Для Vercel используйте переменную окружения `GOOGLE_SHEETS_CREDENTIALS` (см. выше)
+- Все старые JSON файлы с credentials можно удалить - теперь используется только `.env`
