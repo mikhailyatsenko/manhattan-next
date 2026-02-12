@@ -40,7 +40,8 @@ function getCachedGoogleSheetsClient() {
 
 // In-memory cache for prices data
 let pricesCache: { data: PricesData; timestamp: number } | null = null;
-const CACHE_DURATION = 1000; // 1 sec - temporary cache duration for testing (set to 5 minutes or more in production)
+// Cache duration in milliseconds (default: 5 minutes, can be overridden by PRICES_CACHE_DURATION env var)
+const CACHE_DURATION = parseInt(process.env.PRICES_CACHE_DURATION || '300000'); // 5 minutes = 300000ms
 
 // Fetch prices from Google Sheets
 export async function fetchPricesFromGoogleSheets(): Promise<PricesData> {

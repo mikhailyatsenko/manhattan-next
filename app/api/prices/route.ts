@@ -1,17 +1,20 @@
 import { NextResponse } from 'next/server';
 import { fetchPrices } from '@/lib/googleSheets';
 
-export const dynamic = 'force-dynamic'; // Always fetch fresh data
+// Force dynamic to bypass Next.js static optimization
+export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
-export const revalidate = 300; // Revalidate every 5 minutes
 
 export async function GET() {
   try {
     const prices = await fetchPrices();
     
+    // No cache headers - we manage caching in-memory in googleSheets.ts
     return NextResponse.json(prices, {
       headers: {
-        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
       },
     });
   } catch (error) {
