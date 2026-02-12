@@ -106,7 +106,7 @@ export async function fetchPricesFromGoogleSheets(): Promise<PricesData> {
   }
 }
 
-// Update fallback JSON file with fresh data
+// Update fallback JSON file with fresh data (for development backup)
 async function updateFallbackJSON(data: PricesData): Promise<void> {
   try {
     const jsonContent = JSON.stringify(data, null, 2);
@@ -118,15 +118,7 @@ async function updateFallbackJSON(data: PricesData): Promise<void> {
   }
 }
 
-// Fallback to local JSON if Google Sheets fails
+// Main function to fetch prices (no fallback, always from Google Sheets)
 export async function fetchPrices(): Promise<PricesData> {
-  try {
-    return await fetchPricesFromGoogleSheets();
-  } catch (error) {
-    console.warn('Failed to fetch from Google Sheets, falling back to local JSON');
-    
-    // Fallback to local JSON
-    const localPrices = await import('../prices_json/prices.json');
-    return localPrices.default as PricesData;
-  }
+  return await fetchPricesFromGoogleSheets();
 }

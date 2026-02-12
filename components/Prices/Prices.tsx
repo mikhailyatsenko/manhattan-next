@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import type { PriceCategory, PriceItem } from "../../types/prices";
 import { useInView } from "../../lib/hooks/useInView";
 
-import pricesDataFallback from "../../prices_json/prices.json";
-
 interface PriceItemProps {
   item: PriceItem;
 }
@@ -45,13 +43,13 @@ const PriceItemComponent = ({ item }: PriceItemProps) => {
 
 const Prices = () => {
   const { ref, isInView } = useInView();
-  const [prices, setPrices] = useState<PriceCategory>(pricesDataFallback as PriceCategory);
+  const [prices, setPrices] = useState<PriceCategory | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   
   // Получаем список категорий из ключей объекта
-  const categories = Object.keys(prices);
-  const [activeCategory, setActiveCategory] = useState(categories[0] || "");
+  const categories = prices ? Object.keys(prices) : [];
+  const [activeCategory, setActiveCategory] = useState("");
 
   // Fetch prices from API
   useEffect(() => {
@@ -66,11 +64,15 @@ const Prices = () => {
         
         const data = await response.json();
         setPrices(data as PriceCategory);
+        // Set first category as active after data is loaded
+        const firstCategory = Object.keys(data)[0];
+        if (firstCategory) {
+          setActiveCategory(firstCategory);
+        }
         setError(null);
       } catch (err) {
         console.error('Error fetching prices:', err);
-        setError('Не удалось загрузить цены. Показываем локальные данные.');
-        // Keep using fallback data
+        setError('Не удалось загрузить цены. Пожалуйста, попробуйте позже.');
       } finally {
         setLoading(false);
       }
@@ -89,44 +91,65 @@ const Prices = () => {
         <h1 className="sm:text-5xl text-4xl font-medium mb-4 text-center">
           Наши цены
         </h1>
-        {error && (
-          <div className="text-center text-sm text-red-600 mb-2">
-            {error}
-          </div>
-        )}
         <div className="flex mt-6 justify-center">
           <div className="w-16 h-1 rounded-full bg-darkbrown inline-flex"></div>
         </div>
-        <div className="text-center text-base font-bold mt-4">
-          Выберите категорию услуг:
-        </div>
 
-        <div className="masters-tabs border border-darkbrown rounded">
-          {categories.map((category) => (
-            <div
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`master-tab transition-all cursor-pointer hover:bg-mediumbrown hover:text-lightbrown ${
-                activeCategory === category ? "bg-darkbrown text-lightbrown" : ""
-              }`}
-            >
-              {category}
+        {loading && (
+          <div className="flex flex-col items-center justify-center py-20">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-darkbrown mb-4"></div>
+            <p className="text-lg text-gray-600">Загружаем цены...</p>
+          </div>
+        )}
+
+        {error && !loading && (
+          <div className="text-center py-20">
+            <div className="text-red-600 text-lg mb-4">
+              ⚠️ {error}
             </div>
-          ))}
-        </div>
+            <button 
+              onClick={() => window.location.reload()} 
+              className="px-6 py-2 bg-darkbrown text-white rounded hover:bg-mediumbrown transition"
+            >
+              Попробовать снова
+            </button>
+          </div>
+        )}
 
-        <div className="flex flex-wrap justify-center items-start price price-active">
-          <div className="text-center w-full text-3xl">
-            {activeCategory}
-          </div>
-          <div className="p-4 w-full flex flex-col text-center items-center">
-            <ul className="w-full max-w-4xl">
-              {prices[activeCategory]?.map((item, index) => (
-                <PriceItemComponent key={index} item={item} />
+        {!loading && !error && prices && (
+          <>
+            <div className="text-center text-base font-bold mt-4">
+              Выберите категорию услуг:
+            </div>
+
+            <div className="masters-tabs border border-darkbrown rounded">
+              {categories.map((category) => (
+                <div
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`master-tab transition-all cursor-pointer hover:bg-mediumbrown hover:text-lightbrown ${
+                    activeCategory === category ? "bg-darkbrown text-lightbrown" : ""
+                  }`}
+                >
+                  {category}
+                </div>
               ))}
-            </ul>
-          </div>
-        </div>
+            </div>
+
+            <div className="flex flex-wrap justify-center items-start price price-active">
+              <div className="text-center w-full text-3xl">
+                {activeCategory}
+              </div>
+              <div className="p-4 w-full flex flex-col text-center items-center">
+                <ul className="w-full max-w-4xl">
+                  {prices[activeCategory]?.map((item, index) => (
+                    <PriceItemComponent key={index} item={item} />
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
