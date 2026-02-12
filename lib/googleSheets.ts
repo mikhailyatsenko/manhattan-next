@@ -6,6 +6,9 @@ import { join } from 'path';
 const SPREADSHEET_ID = '14StsbfQBd_b1Hk75bbRpzpfJ6lvvWdVkUz3_tO3xuYE';
 const FALLBACK_JSON_PATH = join(process.cwd(), 'prices_json', 'prices.json');
 
+// Hardcoded categories for better performance (instead of fetching sheet names)
+const PRICE_CATEGORIES = ['Маникюр', 'Педикюр', 'Услуги бровиста', 'Подология'];
+
 // Type alias for backward compatibility
 export type PricesData = PriceCategory;
 
@@ -43,28 +46,18 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes in milliseconds
 export async function fetchPricesFromGoogleSheets(): Promise<PricesData> {
   // Check in-memory cache first
   if (pricesCache && Date.now() - pricesCache.timestamp < CACHE_DURATION) {
-    console.log('Returning cached prices data');
+    console.log('⚡ Returning cached prices data');
     return pricesCache.data;
   }
+
+  const startTime = Date.now();
+  console.log('🔄 Fetching fresh prices from Google Sheets...');
 
   try {
     const sheets = getCachedGoogleSheetsClient();
     
-    // Get all sheet names
-    const spreadsheet = await sheets.spreadsheets.get({
-      spreadsheetId: SPREADSHEET_ID,
-    });
-    
-    const sheetNames = spreadsheet.data.sheets
-      ?.map(sheet => sheet.properties?.title)
-      .filter(name => name && name !== 'Лист1') as string[];
-    
-    if (!sheetNames || sheetNames.length === 0) {
-      throw new Error('No sheets found in the spreadsheet');
-    }
-    
-    // Fetch data from all sheets in one batch request
-    const ranges = sheetNames.map(name => `${name}!A2:D`);
+    // Fetch data from all categories in one batch request (using hardcoded categories)
+    const ranges = PRICE_CATEGORIES.map(name => `${name}!A2:D`);
     const batchResponse = await sheets.spreadsheets.values.batchGet({
       spreadsheetId: SPREADSHEET_ID,
       ranges: ranges,
@@ -74,10 +67,10 @@ export async function fetchPricesFromGoogleSheets(): Promise<PricesData> {
     
     // Process batch response
     batchResponse.data.valueRanges?.forEach((valueRange, index) => {
-      const sheetName = sheetNames[index];
+      const categoryName = PRICE_CATEGORIES[index];
       const rows = valueRange.values || [];
       
-      pricesData[sheetName] = rows.map(row => ({
+      pricesData[categoryName] = rows.map(row => ({
         service: row[0] || '',
         price: row[1] || '',
         prefix: row[2] || undefined,
@@ -98,7 +91,8 @@ export async function fetchPricesFromGoogleSheets(): Promise<PricesData> {
       });
     }
     
-    console.log('Fetched fresh prices from Google Sheets');
+    const duration = Date.now() - startTime;
+    console.log(`✅ Fetched fresh prices from Google Sheets in ${duration}ms`);
     return pricesData;
   } catch (error) {
     console.error('Error fetching prices from Google Sheets:', error);
