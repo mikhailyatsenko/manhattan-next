@@ -1,18 +1,10 @@
 import { google } from 'googleapis';
+import type { PriceItem, PriceCategory } from '../types/prices';
 
 const SPREADSHEET_ID = '14StsbfQBd_b1Hk75bbRpzpfJ6lvvWdVkUz3_tO3xuYE';
 
-// Type definitions
-export interface PriceItem {
-  service: string;
-  price: string;
-  prefix?: string;
-  additionalInfo?: string;
-}
-
-export interface PricesData {
-  [category: string]: PriceItem[];
-}
+// Type alias for backward compatibility
+export type PricesData = PriceCategory;
 
 // Initialize Google Sheets API
 function getGoogleSheetsClient() {

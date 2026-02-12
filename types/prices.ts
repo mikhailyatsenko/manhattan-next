@@ -8,8 +8,3 @@ export interface PriceItem {
 export interface PriceCategory {
   [categoryName: string]: PriceItem[];
 }
-
-export interface PricesData {
-  master: PriceCategory;
-  topMaster: PriceCategory;
-}

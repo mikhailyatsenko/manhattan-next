@@ -56,7 +56,7 @@ const Slider: React.FC = () => {
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [lastInteractionTime, setLastInteractionTime] = useState(Date.now());
-  const autoScrollIntervalRef = useRef<number | null>(null);
+  const autoScrollIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const isAutoScrollingRef = useRef(false);
 
   const resetAutoScrollTimer = useCallback(() => {
