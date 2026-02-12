@@ -17,7 +17,9 @@ function getGoogleSheetsClient() {
   // For local development: use JSON file
   else {
     try {
-      credentials = require('../manhattan-487210-5ef58e0a375e.json');
+      // Use dynamic require to avoid webpack bundling the file
+      const credentialsPath = '../manhattan-487210-5ef58e0a375e.json';
+      credentials = eval('require')(credentialsPath);
     } catch (error) {
       throw new Error('Google Sheets credentials not found. Please set GOOGLE_SHEETS_CREDENTIALS environment variable or add manhattan-487210-5ef58e0a375e.json file.');
     }
