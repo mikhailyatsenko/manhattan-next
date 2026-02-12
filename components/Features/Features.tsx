@@ -13,7 +13,7 @@ const Features = () => {
     >
       <div className="container py-20 text-center">
         <div className={`text-center mb-20 animate-in animate-from-bottom ${isInView ? "is-visible" : ""}`}>
-          <h2 className="sm:text-5xl text-4xl font-medium mb-4">
+          <h2 className="sm:text-5xl text-4xl font-normal mb-4">
             Мы заинтересованы в том, чтобы Вы возвращались
           </h2>
           <p className="text-2xl leading-relaxed mx-auto">
@@ -31,7 +31,7 @@ const Features = () => {
             }`}
           >
             <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
-              <i className="fa-solid fa-wand-magic-sparkles text-4xl"></i>
+              <i className="fa-solid fa-wand-magic-sparkles text-4xl" aria-hidden="true"></i>
             </div>
             <div className="flex-grow">
               <h3 className="leading-relaxed text-xl">
@@ -45,7 +45,7 @@ const Features = () => {
             }`}
           >
             <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
-              <i className="fa-solid fa-pump-medical text-4xl"></i>
+              <i className="fa-solid fa-pump-medical text-4xl" aria-hidden="true"></i>
             </div>
             <div className="flex-grow">
               <h3 className="leading-relaxed text-xl">
@@ -59,7 +59,7 @@ const Features = () => {
             }`}
           >
             <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
-              <i className="fa-solid fa-thumbs-up text-4xl"></i>
+              <i className="fa-solid fa-thumbs-up text-4xl" aria-hidden="true"></i>
             </div>
             <div className="flex-grow">
               <h3 className="leading-relaxed text-xl">
@@ -74,7 +74,7 @@ const Features = () => {
             }`}
           >
             <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
-              <i className="fa-solid fa-hand-holding-dollar text-4xl"></i>
+              <i className="fa-solid fa-hand-holding-dollar text-4xl" aria-hidden="true"></i>
             </div>
             <div className="flex-grow">
               <h3 className="leading-relaxed text-xl">
@@ -97,7 +97,7 @@ const Features = () => {
           >
             <button
               type="button"
-              className="mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
+              className="mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-normal rounded-sm text-2xl px-5 py-2.5 text-center my-5 transition-all duration-300 ease-in-out"
             >
               Записаться
             </button>

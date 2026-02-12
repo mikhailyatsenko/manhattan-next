@@ -21,7 +21,7 @@ const PriceItemComponent = ({ item }: PriceItemProps) => {
       <div className="detail-price">
         <div className="price-name">
           <h5 className="text-base">
-            {item.service.split('\n').map((line, index, array) => (
+            {item.service.split("\n").map((line, index, array) => (
               <span key={index}>
                 {line}
                 {index < array.length - 1 && <br />}
@@ -46,7 +46,7 @@ const Prices = () => {
   const [prices, setPrices] = useState<PriceCategory | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
+
   // Получаем список категорий из ключей объекта
   const categories = prices ? Object.keys(prices) : [];
   const [activeCategory, setActiveCategory] = useState("");
@@ -56,12 +56,12 @@ const Prices = () => {
     async function fetchPrices() {
       try {
         setLoading(true);
-        const response = await fetch('/api/prices');
-        
+        const response = await fetch("/api/prices");
+
         if (!response.ok) {
-          throw new Error('Failed to fetch prices');
+          throw new Error("Failed to fetch prices");
         }
-        
+
         const data = await response.json();
         setPrices(data as PriceCategory);
         // Set first category as active after data is loaded
@@ -71,8 +71,8 @@ const Prices = () => {
         }
         setError(null);
       } catch (err) {
-        console.error('Error fetching prices:', err);
-        setError('Не удалось загрузить цены. Пожалуйста, попробуйте позже.');
+        console.error("Error fetching prices:", err);
+        setError("Не удалось загрузить цены. Пожалуйста, попробуйте позже.");
       } finally {
         setLoading(false);
       }
@@ -85,10 +85,10 @@ const Prices = () => {
     <section
       ref={ref}
       id="price"
-      className={`price-section animate-in animate-fade-in ${isInView ? "is-visible" : ""}`}
+      className="price-section"
     >
       <div className="px-2 py-20 mx-auto">
-        <h1 className="sm:text-5xl text-4xl font-medium mb-4 text-center">
+        <h1 className="sm:text-5xl text-4xl font-normal mb-4 text-center">
           Наши цены
         </h1>
         <div className="flex mt-6 justify-center">
@@ -104,12 +104,10 @@ const Prices = () => {
 
         {error && !loading && (
           <div className="text-center py-20">
-            <div className="text-red-600 text-lg mb-4">
-              ⚠️ {error}
-            </div>
-            <button 
-              onClick={() => window.location.reload()} 
-              className="px-6 py-2 bg-darkbrown text-white rounded hover:bg-mediumbrown transition"
+            <div className="text-red-600 text-lg mb-4">⚠️ {error}</div>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-6 py-2 bg-darkbrown text-white rounded hover:bg-mediumbrown transition-all duration-300 ease-in-out"
             >
               Попробовать снова
             </button>
@@ -127,8 +125,10 @@ const Prices = () => {
                 <div
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`master-tab transition-all cursor-pointer hover:bg-mediumbrown hover:text-lightbrown ${
-                    activeCategory === category ? "bg-darkbrown text-lightbrown" : ""
+                  className={`master-tab transition-all duration-300 ease-in-out cursor-pointer hover:bg-mediumbrown hover:text-lightbrown ${
+                    activeCategory === category
+                      ? "bg-darkbrown text-lightbrown"
+                      : ""
                   }`}
                 >
                   {category}
@@ -136,7 +136,11 @@ const Prices = () => {
               ))}
             </div>
 
-            <div className="flex flex-wrap justify-center items-start price price-active">
+            <div
+              className={`flex flex-wrap justify-center items-start price price-active animate-in animate-from-bottom ${
+                isInView ? "is-visible" : ""
+              }`}
+            >
               <div className="text-center w-full text-3xl">
                 {activeCategory}
               </div>

@@ -1,6 +1,7 @@
 "use client";
 import { Link } from "react-scroll";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const Header = () => {
   const [isBurgerMenuActive, setIsBurgerMenuActive] = useState(false);
@@ -45,28 +46,28 @@ const Header = () => {
           </a>
         </p>
       </div>
-      <header className={`header w-full font-medium z-10 ${headerClassName}`}>
+      <header className={`header w-full font-normal z-10 ${headerClassName}`}>
         <div className="container px-4">
           <nav className="flex justify-between items-center">
             <div className="md:hidden w-1/4 md:w-auto flex text-3xl z-[6]">
               <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
-                <i className="fa-brands fa-whatsapp text-green-500"></i>
+                <i className="fa-brands fa-whatsapp text-green-500" aria-hidden="true"></i>
               </a>
               <a className="ml-3" href="tel:+79263948050">
-                <i className="fa-solid fa-square-phone text-red-500"></i>
+                <i className="fa-solid fa-square-phone text-red-500" aria-hidden="true"></i>
               </a>
             </div>
             <div className="flex items-center header-logo justify-center w-1/2 md:w-auto">
               <div className="menu-logo py-2 flex items-center">
                 <a href="#">
-                  <img src="img/logo.png" alt="Logo" />
+                  <Image src="/img/logo.png" alt="Logo" width={60} height={60} />
                 </a>
               </div>
               <div className="text-center text-darkbrown md:text-2xl text-md font-normal px-1 md:px-2 cursor-default">
                 <div className="uppercase leading-4 md:leading-6">
                   Манхэттен
                 </div>
-                {/* <div className="leading-5 md:leading-6">beauty bar</div> */}
+                <div className="leading-5 md:leading-6">beauty bar</div>
               </div>
             </div>
             <div className="w-1/4 md:w-auto flex justify-end">

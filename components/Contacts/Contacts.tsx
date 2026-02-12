@@ -25,7 +25,7 @@ const Contacts = () => {
               isInView ? "is-visible" : ""
             }`}
           >
-            <h1 className="sm:text-6xl text-5xl font-medium">Записаться</h1>
+            <h1 className="sm:text-6xl text-5xl font-normal">Записаться</h1>
 
             <div className="flex my-4 justify-center">
               <div className="w-16 h-1 rounded-full bg-lightbrown inline-flex"></div>
@@ -36,28 +36,28 @@ const Contacts = () => {
 
             <p className="sm:text-2xl text-2xl mb-1">
               <a className="sm:ml-3" href="tel:+79263948050">
-                8 (985) 411-43-54 <i className="fa-solid fa-square-phone"></i>
+                8 (985) 411-43-54 <i className="fa-solid fa-square-phone" aria-hidden="true"></i>
               </a>
             </p>
             <p className="sm:text-2xl text-2xl mb-1">
               <a className="sm:ml-3" href="tel:+79263948050">
-                8 (926) 394-80-50 <i className="fa-solid fa-square-phone"></i>
+                8 (926) 394-80-50 <i className="fa-solid fa-square-phone" aria-hidden="true"></i>
               </a>{" "}
               <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
-                <i className="fa-brands fa-whatsapp "></i>{" "}
+                <i className="fa-brands fa-whatsapp " aria-hidden="true"></i>{" "}
               </a>
             </p>
             <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
               <button
                 id="button-whatsapp"
                 type="button"
-                className="animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-xl px-5 py-2.5 text-center me-2 mb-2"
+                className="animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-normal rounded-lg text-xl px-5 py-2.5 text-center me-2 mb-2 transition-all duration-300 ease-in-out"
               >
                 Записаться через WhatsApp{" "}
-                <i className="fa-brands fa-whatsapp"></i>
+                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
               </button>
             </a>
-            <h2 className="sm:text-5xl text-4xl font-medium pt-8">
+            <h2 className="sm:text-5xl text-4xl font-normal pt-8">
               Как нас найти:
             </h2>
             <div className="flex my-4 justify-center">

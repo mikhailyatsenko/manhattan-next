@@ -1,14 +1,15 @@
-"use client"
+"use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import styles from "./WorksGallery.module.scss";
 
-const imageGallery1 = "img/gallery-1.jpg";
-const imageGallery2 = "img/gallery-2.jpg";
-const imageGallery3 = "img/gallery-3.jpg";
-const imageGallery4 = "img/gallery-4.jpg";
-const imageGallery5 = "img/gallery-5.jpg";
-const imageGallery6 = "img/gallery-6.webp";
+const imageGallery1 = "/img/gallery-1.jpg";
+const imageGallery2 = "/img/gallery-2.jpg";
+const imageGallery3 = "/img/gallery-3.jpg";
+const imageGallery4 = "/img/gallery-4.jpg";
+const imageGallery5 = "/img/gallery-5.jpg";
+const imageGallery6 = "/img/gallery-6.webp";
 
 const galleryImages = [
   { src: imageGallery2, alt: "Gallery image 1" },
@@ -39,9 +40,9 @@ const WorksGallery = () => {
     const checkScrollState = () => {
       updateScrollState(scroller);
     };
-    
+
     checkScrollState();
-    
+
     // Recheck after a small delay to ensure DOM is fully rendered
     const timeoutId = setTimeout(checkScrollState, 100);
 
@@ -70,7 +71,7 @@ const WorksGallery = () => {
 
     const scrollAmount = scroller.clientWidth * 0.8; // Scroll 80% of visible width
     const scrollTo = direction === "left" ? -scrollAmount : scrollAmount;
-    
+
     scroller.scrollBy({ left: scrollTo, behavior: "smooth" });
   };
 
@@ -86,23 +87,21 @@ const WorksGallery = () => {
       <div className={styles.horizontalGallery} ref={galleryRef}>
         {galleryImages.map((image, index) => (
           <div key={index} className={styles.galleryItem}>
-{/*
-temporary disable imgs
-*/}
-<div style={{width:600, height: 600, backgroundColor: '#ccc'}}/>
-         {/* <img 
-              src={image.src} 
-              alt={image.alt} 
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={400}
+              height={400}
               loading="lazy"
               onLoad={index === 0 ? handleImageLoad : undefined}
-            /> */}
+            />
           </div>
         ))}
       </div>
 
       {/* Navigation arrows */}
       <button
-        className={`${styles.navArrowLeft} ${!canScrollLeft ? styles.disabled : ''}`}
+        className={`${styles.navArrowLeft} ${!canScrollLeft ? styles.disabled : ""}`}
         onClick={() => scrollGallery("left")}
         aria-label="Previous images"
         disabled={!canScrollLeft}
@@ -110,7 +109,7 @@ temporary disable imgs
         ‹
       </button>
       <button
-        className={`${styles.navArrowRight} ${!canScrollRight ? styles.disabled : ''}`}
+        className={`${styles.navArrowRight} ${!canScrollRight ? styles.disabled : ""}`}
         onClick={() => scrollGallery("right")}
         aria-label="Next images"
         disabled={!canScrollRight}

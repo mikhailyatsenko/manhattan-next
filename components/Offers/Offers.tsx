@@ -21,7 +21,7 @@ const Offers = () => {
             >
               <div className="md:py-24 py-16 md:pr-16">
                 <div className="text-darkbrown md:text-left text-center">
-                  <h2 className="lg:text-5xl text-4xl font-medium mb-6">
+                  <h2 className="lg:text-5xl text-4xl font-normal mb-6">
                     Будьте в курсе наших новостей, подписывайтесь
                   </h2>
 
@@ -42,7 +42,7 @@ const Offers = () => {
             >
               <div className="py-24 md:pl-16">
                 <div className="text-white md:text-left text-center">
-                  <h2 className="sm:text-5xl text-4xl font-medium mb-6">
+                  <h2 className="sm:text-5xl text-4xl font-normal mb-6">
                     Специальные предложения
                   </h2>
 

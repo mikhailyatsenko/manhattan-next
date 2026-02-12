@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "react-scroll";
-import { useInView } from "@/lib/hooks/useInView";
+import { useInView } from "../../lib/hooks/useInView";
 
 const Years15 = () => {
   const { ref, isInView } = useInView();
@@ -10,7 +10,7 @@ const Years15 = () => {
     <section ref={ref} className="py-20 text-center">
       <div className="container text-center">
         <h2
-          className={`sm:text-5xl text-4xl font-medium mb-6 animate-in animate-from-bottom ${
+          className={`sm:text-5xl text-4xl font-normal mb-6 animate-in animate-from-bottom ${
             isInView ? "is-visible" : ""
           }`}
         >
@@ -31,7 +31,7 @@ const Years15 = () => {
           >
             <button
               type="button"
-              className="menu-link mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
+              className=" mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-normal rounded-sm text-2xl px-5 py-2.5 text-center my-5 transition-all duration-300 ease-in-out"
             >
               Записаться
             </button>

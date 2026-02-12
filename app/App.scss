@@ -4,9 +4,6 @@ main {
   position: relative;
 }
 
-#slider .swiper {
-  height: 90vh;
-}
 
 .menu-logo img {
   max-height: 70px;
@@ -220,15 +217,8 @@ main {
   }
 }
 
-.price {
-  height: 0;
-  opacity: 0;
-}
-
 .price-active {
   height: auto;
-  opacity: 1;
-  transition: 2s;
 }
 
 @media (max-width: 767px) {

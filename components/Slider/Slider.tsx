@@ -14,8 +14,8 @@ const slides = [
     getImage: (isMobile: boolean) => (isMobile ? sliderImageSm1 : sliderImage1),
     content: (
       <>
-        <h1 className="uppercase">Акция:</h1>
-        <h1>
+        <h1 className="uppercase 2xl:text-7xl xl:text-6xl text-4xl text-lightbrown drop-shadow-sm font-normal">Акция:</h1>
+        <h1 className="2xl:text-7xl xl:text-6xl text-4xl text-lightbrown drop-shadow-sm font-normal"> 
           <span>Первое посещение: </span>
           <span className="font-semibold whitespace-nowrap">скидка 10%</span>
         </h1>
@@ -26,7 +26,7 @@ const slides = [
     id: "birthday",
     getImage: () => sliderImage2,
     content: (
-      <h1>
+      <h1 className="2xl:text-7xl xl:text-6xl text-4xl text-lightbrown drop-shadow-sm font-normal">
         Дарим скидку
         <span className="font-semibold">
           {" "}
@@ -39,7 +39,7 @@ const slides = [
     id: "friends",
     getImage: () => sliderImage3,
     content: (
-      <h1>
+      <h1 className="2xl:text-7xl xl:text-6xl text-4xl text-lightbrown drop-shadow-sm font-normal">
         Приводите своих друзей и получайте{" "}
         <span className={styles.semibold}>скидку в 200₽</span> за каждого нового
         клиента!

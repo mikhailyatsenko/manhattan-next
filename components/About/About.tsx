@@ -1,6 +1,7 @@
 "use client";
 
 import { useInView } from "@/lib/hooks/useInView";
+import Image from "next/image";
 
 const About = () => {
   const { ref, isInView } = useInView();
@@ -18,10 +19,12 @@ const About = () => {
               isInView ? "is-visible" : ""
             }`}
           >
-            <img
+            <Image
               className="rounded"
               alt="hero"
               src="/img/promo-image.jpg"
+              width={800}
+              height={600}
             />
           </div>
           <div
@@ -29,9 +32,9 @@ const About = () => {
               isInView ? "is-visible" : ""
             }`}
           >
-            <h3 className="text-4xl lg:text-5xl font-medium mb-6">
+            <h3 className="text-4xl lg:text-5xl font-normal mb-6">
               На 3 этаже торгового центра «Триумфальный» находится маникюрный
-              салон <strong>«Манхэттен beauty bar».</strong>
+              салон <strong>«Манхэттен beauty bar»</strong>
             </h3>
             <div className="flex my-4 justify-center">
               <div className="w-16 h-1 rounded-full bg-lightbrown inline-flex"></div>
