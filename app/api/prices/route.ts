@@ -1,20 +1,22 @@
 import { NextResponse } from 'next/server';
 import { fetchPrices } from '@/lib/googleSheets';
 
-// Force dynamic to bypass Next.js static optimization
-export const dynamic = 'force-dynamic';
+// Use Edge Runtime for faster cold starts on Vercel
 export const runtime = 'nodejs';
+
+// Enable caching with revalidation
+export const revalidate = 300; // Revalidate every 5 minutes (300 seconds)
 
 export async function GET() {
   try {
     const prices = await fetchPrices();
     
-    // No cache headers - we manage caching in-memory in googleSheets.ts
+    // Set cache headers for Vercel Edge Network
+    // s-maxage: cache on Vercel's edge for 5 minutes
+    // stale-while-revalidate: serve stale content while revalidating for up to 1 hour
     return NextResponse.json(prices, {
       headers: {
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'Pragma': 'no-cache',
-        'Expires': '0',
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=3600',
       },
     });
   } catch (error) {

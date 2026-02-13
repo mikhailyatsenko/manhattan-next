@@ -38,20 +38,10 @@ function getCachedGoogleSheetsClient() {
   return cachedClient;
 }
 
-// In-memory cache for prices data
-let pricesCache: { data: PricesData; timestamp: number } | null = null;
-const CACHE_DURATION = 1000; // 1 sec - temporary cache duration for testing (set to 5 minutes or more in production)
-
 // Fetch prices from Google Sheets
 export async function fetchPricesFromGoogleSheets(): Promise<PricesData> {
-  // Check in-memory cache first
-  if (pricesCache && Date.now() - pricesCache.timestamp < CACHE_DURATION) {
-    console.log('⚡ Returning cached prices data');
-    return pricesCache.data;
-  }
-
   const startTime = Date.now();
-  console.log('🔄 Fetching fresh prices from Google Sheets...');
+  console.log('🔄 Fetching prices from Google Sheets...');
 
   try {
     const sheets = getCachedGoogleSheetsClient();
@@ -78,12 +68,6 @@ export async function fetchPricesFromGoogleSheets(): Promise<PricesData> {
       }));
     });
     
-    // Update cache
-    pricesCache = {
-      data: pricesData,
-      timestamp: Date.now(),
-    };
-    
     // Update fallback JSON file in background (only in development/local environment)
     if (process.env.NODE_ENV !== 'production') {
       updateFallbackJSON(pricesData).catch(error => {
@@ -92,7 +76,7 @@ export async function fetchPricesFromGoogleSheets(): Promise<PricesData> {
     }
     
     const duration = Date.now() - startTime;
-    console.log(`✅ Fetched fresh prices from Google Sheets in ${duration}ms`);
+    console.log(`✅ Fetched prices from Google Sheets in ${duration}ms`);
     return pricesData;
   } catch (error) {
     console.error('Error fetching prices from Google Sheets:', error);
