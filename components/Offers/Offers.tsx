@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useInView } from "../../lib/hooks/useInView";
 
@@ -7,12 +7,8 @@ const Offers = () => {
 
   return (
     <>
-      <section
-        ref={ref}
-        id="promo-1"
-        className="relative"
-      >
-        <div className="container justify-center items-center flex-wrap relative z-[2]">
+      <section ref={ref} id="promo-1" className="relative overflow-hidden">
+        <div className="container max-w-full w-full md:px-10 px-4 justify-center items-center flex-wrap relative z-[2]">
           <div className="flex flex-wrap w-full justify-center items-center">
             <div
               className={`w-full md:w-1/2 md:pr-5 animate-in animate-from-right ${
@@ -20,14 +16,12 @@ const Offers = () => {
               }`}
             >
               <div className="md:py-24 py-16 md:pr-16">
-                <div className="text-darkbrown md:text-left text-center">
+                <div className="text-darkbrown md:text-left text-center  min-w-fit bg-[#fff9] p-4">
                   <h2 className="lg:text-5xl text-4xl font-normal mb-6">
                     Будьте в курсе наших новостей, подписывайтесь
                   </h2>
 
-                  <span
-                    className="lg:text-6xl text-4xl font-bold hover:text-mediumbrown"
-                  >
+                  <span className="lg:text-6xl text-4xl font-bold hover:text-mediumbrown">
                     @manhattan.bb
                   </span>
                 </div>
@@ -40,8 +34,8 @@ const Offers = () => {
                 isInView ? "is-visible" : ""
               }`}
             >
-              <div className="py-24 md:pl-16">
-                <div className="text-white md:text-left text-center">
+              <div className="md:py-24 py-20 md:pl-8 xl:pl-16">
+                <div className="text-white md:text-right p-4 bg-[#954e2cb2] min-w-fit text-center">
                   <h2 className="sm:text-5xl text-4xl font-normal mb-6">
                     Специальные предложения
                   </h2>
@@ -51,15 +45,14 @@ const Offers = () => {
                   </p>
                   <p className="sm:text-2xl text-xl">Скидка: 10%</p>
 
-                  <div className="flex my-4 justify-center md:justify-start">
+                  <div className="flex my-4 justify-center md:justify-end">
                     <div className="w-16 h-[2px] rounded-full bg-lightbrown inline-flex"></div>
                   </div>
                   <p className="sm:text-2xl text-xl">
-                    При комплексном обслуживании
-                    «маникюр + гельлак + педикюр + гельлак»{" "}
-                    <strong>коррекция бровей в подарок.</strong>
+                    При комплексном обслуживании «маникюр + гельлак + педикюр +
+                    гельлак» <strong>коррекция бровей в подарок.</strong>
                   </p>
-                  <div className="flex my-4 justify-center md:justify-start">
+                  <div className="flex my-4 justify-center md:justify-end">
                     <div className="w-16 h-[2px] rounded-full bg-lightbrown inline-flex"></div>
                   </div>
                   <p className="sm:text-2xl text-xl">
@@ -67,7 +60,7 @@ const Offers = () => {
                     <strong>получайте скидку в 200₽</strong> за каждого нового
                     клиента!
                   </p>
-                  <div className="flex my-4 justify-center md:justify-start">
+                  <div className="flex my-4 justify-center md:justify-end">
                     <div className="w-16 h-[2px] rounded-full bg-lightbrown inline-flex"></div>
                   </div>
                   <p className="sm:text-2xl text-xl">

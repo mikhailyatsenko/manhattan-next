@@ -1,6 +1,11 @@
 "use client";
 import { Link } from "react-scroll";
 import { useInView } from "../../lib/hooks/useInView";
+import Image from "next/image";
+import instruments from "@/assets/instruments.svg";
+import materials from "@/assets/materials.svg";
+import perfectWork from "@/assets/perfect-work.svg";
+import profitable from "@/assets/profitable.svg";
 
 const Features = () => {
   const { ref, isInView } = useInView();
@@ -12,7 +17,9 @@ const Features = () => {
       className="text-darkbrown bg-center features-section"
     >
       <div className="container py-20 text-center">
-        <div className={`text-center mb-20 animate-in animate-from-bottom ${isInView ? "is-visible" : ""}`}>
+        <div
+          className={`text-center mb-20 animate-in animate-from-bottom ${isInView ? "is-visible" : ""}`}
+        >
           <h2 className="sm:text-5xl text-4xl font-normal mb-4">
             Мы заинтересованы в том, чтобы Вы возвращались
           </h2>
@@ -30,8 +37,8 @@ const Features = () => {
               isInView ? "is-visible" : ""
             }`}
           >
-            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
-              <i className="fa-solid fa-wand-magic-sparkles text-4xl" aria-hidden="true"></i>
+            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-white  mb-5 flex-shrink-0">
+              <Image src={materials} alt="materials" width={80} height={80} />
             </div>
             <div className="flex-grow">
               <h3 className="leading-relaxed text-xl">
@@ -44,8 +51,13 @@ const Features = () => {
               isInView ? "is-visible" : ""
             }`}
           >
-            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
-              <i className="fa-solid fa-pump-medical text-4xl" aria-hidden="true"></i>
+            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-white mb-5 flex-shrink-0">
+              <Image
+                src={instruments}
+                alt="Instruments"
+                width={50}
+                height={50}
+              />
             </div>
             <div className="flex-grow">
               <h3 className="leading-relaxed text-xl">
@@ -58,8 +70,13 @@ const Features = () => {
               isInView ? "is-visible" : ""
             }`}
           >
-            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
-              <i className="fa-solid fa-thumbs-up text-4xl" aria-hidden="true"></i>
+            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-white mb-5 flex-shrink-0">
+              <Image
+                src={perfectWork}
+                alt="perfect work"
+                width={50}
+                height={50}
+              />
             </div>
             <div className="flex-grow">
               <h3 className="leading-relaxed text-xl">
@@ -73,8 +90,8 @@ const Features = () => {
               isInView ? "is-visible" : ""
             }`}
           >
-            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
-              <i className="fa-solid fa-hand-holding-dollar text-4xl" aria-hidden="true"></i>
+            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-white mb-5 flex-shrink-0">
+              <Image src={profitable} alt="profitable" width={50} height={50} />
             </div>
             <div className="flex-grow">
               <h3 className="leading-relaxed text-xl">
