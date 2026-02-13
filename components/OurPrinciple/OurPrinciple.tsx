@@ -17,7 +17,7 @@ const OurPrinciple = () => {
             isInView ? "is-visible" : ""
           }`}
         >
-          <Link to="price" spy={true} smooth={true} offset={50} duration={500}>
+          <Link to="price" spy={true} smooth={true} offset={0} duration={500}>
             <button
               type="button"
               className="mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-normal rounded-sm text-2xl px-5 py-2.5 text-center my-5 transition-all duration-300 ease-in-out"

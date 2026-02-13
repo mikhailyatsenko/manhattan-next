@@ -174,7 +174,7 @@ const Slider: React.FC = () => {
                   to="special"
                   spy={true}
                   smooth={true}
-                  offset={20}
+                  offset={10}
                   duration={500}
                 >
                   <button type="button">Побробнее об акциях</button>

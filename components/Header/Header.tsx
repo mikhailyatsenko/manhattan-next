@@ -95,7 +95,7 @@ const Header = () => {
                   to="about"
                   spy={true}
                   smooth={true}
-                  offset={50}
+                  offset={0}
                   duration={500}
                   className="menu-link"
                 >
@@ -112,7 +112,7 @@ const Header = () => {
                   to="price"
                   spy={true}
                   smooth={true}
-                  offset={50}
+                  offset={0}
                   duration={500}
                   className="menu-link"
                 >
@@ -129,7 +129,7 @@ const Header = () => {
                   to="promo-1"
                   spy={true}
                   smooth={true}
-                  offset={50}
+                  offset={10}
                   duration={500}
                   className="menu-link"
                 >

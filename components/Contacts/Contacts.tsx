@@ -65,7 +65,7 @@ const Contacts = () => {
             </div>
             <p className="sm:text-xl text-lg">Мы находимся по адресу:</p>
             <p className="sm:text-xl text-lg">
-              г. Москва, ул. Вавилова 66 (м.&nbsp;Профсоюзная,
+              г. Москва, ул. Вавилова 66 (м.&nbsp;Вавиловская, м.&nbsp;Профсоюзная,
               м.&nbsp;Университет)
             </p>
             <p className="sm:text-xl text-lg">ТЦ &quot;Триумфальный&quot;, 3 этаж</p>
