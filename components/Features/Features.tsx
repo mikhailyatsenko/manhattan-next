@@ -18,7 +18,7 @@ const Features = () => {
     >
       <div className="container py-20 text-center">
         <div
-          className={`text-center mb-20 animate-in animate-from-bottom ${isInView ? "is-visible" : ""}`}
+          className={`text-center mb-6 animate-in animate-from-bottom ${isInView ? "is-visible" : ""}`}
         >
           <h2 className="sm:text-5xl text-4xl font-normal mb-4">
             Мы заинтересованы в том, чтобы Вы возвращались
@@ -31,7 +31,7 @@ const Features = () => {
             <div className="w-16 h-1 rounded-full bg-lightbrown inline-flex"></div>
           </div>
         </div>
-        <div className="flex flex-wrap justify-center font-semibold">
+        <div className="flex flex-wrap justify-center font-semibold mb-12">
           <div
             className={`p-4 sm:w-1/2 lg:w-1/4 flex flex-col text-center items-center animate-in animate-from-bottom animate-delay-200 ${
               isInView ? "is-visible" : ""
