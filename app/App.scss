@@ -318,7 +318,7 @@ main {
 @media (max-width: 767px) {
   #promo-1:after {
     top: 340px;
-    height: 680px;
+    min-height: 680px;
     width: 100%;
     left: 0%;
   }

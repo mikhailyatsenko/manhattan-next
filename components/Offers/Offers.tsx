@@ -17,11 +17,11 @@ const Offers = () => {
             >
               <div className="md:py-24 py-16 md:pr-16">
                 <div className="text-darkbrown md:text-left text-center  min-w-fit bg-[#fff9] p-4">
-                  <h2 className="lg:text-5xl text-4xl font-normal mb-6">
+                  <h2 className="xl:text-5xl text-4xl font-normal mb-6">
                     Будьте в курсе наших новостей, подписывайтесь
                   </h2>
 
-                  <span className="lg:text-6xl text-4xl font-bold hover:text-mediumbrown">
+                  <span className="xl:text-6xl text-4xl font-bold hover:text-mediumbrown">
                     @manhattan.bb
                   </span>
                 </div>
@@ -36,7 +36,7 @@ const Offers = () => {
             >
               <div className="md:py-24 py-20 md:pl-8 xl:pl-16">
                 <div className="text-white md:text-right p-4 bg-[#954e2cb2] min-w-fit text-center">
-                  <h2 className="sm:text-5xl text-4xl font-normal mb-6">
+                  <h2 className="xl:text-5xl text-4xl font-bold mb-6">
                     Специальные предложения
                   </h2>
 
