@@ -13,20 +13,34 @@ const Header = () => {
   };
 
   useEffect(() => {
+    const timeoutId = null;
+    let isThrottled = false;
+
     function stickyMenu() {
-      // if (headerRef.current && scrollY > headerRef.current.clientHeight) {
-      //   setHeaderClassName("fixed");
-      // } else {
-      //   setHeaderClassName("");
-      // }
       if (window.scrollY > 400) {
         setHeaderClassName("in-view fixed");
       } else {
         setHeaderClassName("");
       }
     }
-    window.addEventListener("scroll", stickyMenu);
-    return () => window.removeEventListener("scroll", stickyMenu);
+
+    function throttledStickyMenu() {
+      if (!isThrottled) {
+        stickyMenu();
+        isThrottled = true;
+        setTimeout(() => {
+          isThrottled = false;
+        }, 100); // выполняется максимум раз в 100мс
+      }
+    }
+
+    window.addEventListener("scroll", throttledStickyMenu);
+    return () => {
+      window.removeEventListener("scroll", throttledStickyMenu);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   return (
@@ -34,26 +48,18 @@ const Header = () => {
       <div
         className={
           headerClassName
-            ? "md:block hidden top-bar bg-darkbrown text-lightbrown text-center w-full h-[76px] text-sm md:text-base"
+            ? "md:block hidden top-bar bg-darkbrown text-lightbrown text-center w-full h-[86px] text-sm md:text-base"
             : "hidden"
         }
       >
-        <p>
-          Запись по телефону:{" "}
-          <a
-            className="underline hover:text-mediumbrown"
-            href="tel:+79263948050"
-          >
-            +7 (926) 394-80-50
-          </a>
-        </p>
+
       </div>
       <header className={`header w-full font-normal z-10 ${headerClassName}`}>
         <div className="container px-4">
           <nav className="flex justify-between items-center">
             <div className="md:hidden w-1/4 gap-4 md:w-auto flex text-3xl z-[6]">
               <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
-               <Image
+                <Image
                   src={whatsappIcon}
                   width={32}
                   height={32}

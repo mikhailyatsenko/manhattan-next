@@ -1,8 +1,12 @@
 .sliderContainer {
   position: relative;
-  height: 90vh;
+  height: calc(100vh - 86px);
   width: 100%;
   background-color: #3d2516;
+  @media (max-width: 767px) {
+    margin-top: 61px;
+   height: calc(100vh - 61px);
+  }
 }
 
 .horizontalSlider {

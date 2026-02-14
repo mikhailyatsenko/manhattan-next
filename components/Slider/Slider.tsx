@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
+import { throttle } from "@/lib/utils/throttle";
 const sliderImage1 = "img/slide-1.webp";
 const sliderImage2 = "img/slide-2.webp";
 const sliderImage3 = "img/slide-3.jpg";
@@ -82,14 +83,15 @@ const Slider: React.FC = () => {
     // Initial state
     updateScrollState(scroller);
 
-    const handleScroll = () => {
+    // Throttle scroll handler - limit updates to every 150ms
+    const handleScroll = throttle(() => {
       updateScrollState(scroller);
 
       // Reset timer only if this is a user interaction (not auto-scroll)
       if (!isAutoScrollingRef.current) {
         resetAutoScrollTimer();
       }
-    };
+    }, 150);
 
     scroller.addEventListener("scroll", handleScroll);
 

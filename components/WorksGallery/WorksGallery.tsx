@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./WorksGallery.module.scss";
+import { throttle } from "@/lib/utils/throttle";
+import { debounce } from "@/lib/utils/debounce";
 
 const imageGallery1 = "/img/gallery-1.jpg";
 const imageGallery2 = "/img/gallery-2.jpg";
@@ -46,16 +48,17 @@ const WorksGallery = () => {
     // Recheck after a small delay to ensure DOM is fully rendered
     const timeoutId = setTimeout(checkScrollState, 100);
 
-    const handleScroll = () => {
+    // Throttle scroll handler - limit updates to every 150ms
+    const handleScroll = throttle(() => {
       updateScrollState(scroller);
-    };
+    }, 150);
 
     scroller.addEventListener("scroll", handleScroll);
 
-    // Update on window resize
-    const handleResize = () => {
+    // Debounce resize handler - wait 250ms after resize stops
+    const handleResize = debounce(() => {
       updateScrollState(scroller);
-    };
+    }, 250);
     window.addEventListener("resize", handleResize);
 
     return () => {
