@@ -2,6 +2,8 @@
 import { Link } from "react-scroll";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import whatsappIcon from "@/assets/whatsapp-svgrepo-com.svg";
+import phoneRedIcon from "@/assets/phone-red.svg";
 
 const Header = () => {
   const [isBurgerMenuActive, setIsBurgerMenuActive] = useState(false);
@@ -49,18 +51,17 @@ const Header = () => {
       <header className={`header w-full font-normal z-10 ${headerClassName}`}>
         <div className="container px-4">
           <nav className="flex justify-between items-center">
-            <div className="md:hidden w-1/4 md:w-auto flex text-3xl z-[6]">
+            <div className="md:hidden w-1/4 gap-4 md:w-auto flex text-3xl z-[6]">
               <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
-                <i
-                  className="fa-brands fa-whatsapp text-green-500"
-                  aria-hidden="true"
-                ></i>
+               <Image
+                  src={whatsappIcon}
+                  width={32}
+                  height={32}
+                  alt="WhatsApp"
+                />
               </a>
-              <a className="ml-3" href="tel:+79263948050">
-                <i
-                  className="fa-solid fa-square-phone text-red-500"
-                  aria-hidden="true"
-                ></i>
+              <a href="tel:+79263948050">
+                <Image src={phoneRedIcon} width={32} height={32} alt="Phone" />
               </a>
             </div>
             <div className="flex items-center header-logo justify-center w-1/2 md:w-auto">

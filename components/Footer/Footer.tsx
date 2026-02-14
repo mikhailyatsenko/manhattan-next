@@ -1,4 +1,6 @@
 import Image from "next/image";
+import whatsappIcon from "@/assets/whatsapp-svgrepo-com.svg";
+import phoneNormalIcon from "@/assets/phone-normal.svg";
 
 // &copy;
 const Footer = () => {
@@ -23,10 +25,22 @@ const Footer = () => {
             className="ml-3"
             href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
           >
-            <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <Image
+                  style={{ display: "inline" }}
+                  src={whatsappIcon}
+                  width={28}
+                  height={28}
+                  alt="WhatsApp"
+                />
           </a>
           <a className="ml-3" href="tel:+79263948050">
-            <i className="fa-solid fa-square-phone" aria-hidden="true"></i>
+          <Image
+                  style={{ display: "inline" }}
+                  src={phoneNormalIcon}
+                  width={28}
+                  height={28}
+                  alt="Phone"
+                />
           </a>
         </span>
       </div>
