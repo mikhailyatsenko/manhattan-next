@@ -28,13 +28,10 @@ const Years15 = () => {
             smooth={true}
             offset={0}
             duration={500}
+            href="#contacts"
+            className="mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-normal rounded-sm text-2xl px-5 py-2.5 text-center my-5 transition-all duration-300 ease-in-out inline-block"
           >
-            <button
-              type="button"
-              className=" mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-normal rounded-sm text-2xl px-5 py-2.5 text-center my-5 transition-all duration-300 ease-in-out"
-            >
-              Записаться
-            </button>
+            Записаться
           </Link>
         </div>
       </div>

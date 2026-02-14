@@ -76,7 +76,8 @@ const Contacts = () => {
                 type="button"
                 className="animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all duration-300 ease-in-out"
               >
-                Записаться через WhatsApp{" "}
+                Записаться через <span className="text-nowrap">
+                  WhatsApp{" "}
                 <Image
                   style={{ display: "inline" }}
                   src={whatsappIcon}
@@ -84,6 +85,7 @@ const Contacts = () => {
                   height={28}
                   alt="WhatsApp"
                 />
+                  </span>
               </button>
             </a>
             <h2 className="sm:text-5xl text-4xl font-normal pt-8">

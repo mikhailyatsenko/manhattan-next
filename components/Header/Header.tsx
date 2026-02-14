@@ -95,7 +95,7 @@ const Header = () => {
             <ul
               className={`menu-body flex uppercase font-semibold ${isBurgerMenuActive ? "active" : ""}`}
             >
-              <li className="menu-link pr-3 hover:text-mediumbrown cursor-pointer">
+              <li className="pr-3 hover:text-mediumbrown cursor-pointer">
                 <Link
                   onClick={switcherBurgerMenu}
                   activeClass="active"
@@ -105,13 +105,14 @@ const Header = () => {
                   offset={0}
                   duration={500}
                   className="menu-link"
+                  href="#about"
                 >
                   О нас
                 </Link>
               </li>
               <li
                 data-goto=".price-section"
-                className="menu-link pr-3 hover:text-mediumbrown cursor-pointer"
+                className="pr-3 hover:text-mediumbrown cursor-pointer"
               >
                 <Link
                   onClick={switcherBurgerMenu}
@@ -122,13 +123,14 @@ const Header = () => {
                   offset={0}
                   duration={500}
                   className="menu-link"
+                  href="#price"
                 >
                   Цены
                 </Link>
               </li>
               <li
                 data-goto="#special"
-                className="menu-link pr-3 hover:text-mediumbrown cursor-pointer"
+                className="pr-3 hover:text-mediumbrown cursor-pointer"
               >
                 <Link
                   onClick={switcherBurgerMenu}
@@ -139,13 +141,14 @@ const Header = () => {
                   offset={10}
                   duration={500}
                   className="menu-link"
+                  href="#promo-1"
                 >
                   Акции
                 </Link>
               </li>
               <li
                 data-goto="#contacts"
-                className="menu-link hover:text-mediumbrown hover:cursor-pointer"
+                className="hover:text-mediumbrown hover:cursor-pointer"
               >
                 <Link
                   onClick={switcherBurgerMenu}
@@ -156,6 +159,7 @@ const Header = () => {
                   offset={0}
                   duration={500}
                   className="menu-link"
+                  href="#contacts"
                 >
                   Контакты
                 </Link>

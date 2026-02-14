@@ -178,6 +178,8 @@ const Slider: React.FC = () => {
                   smooth={true}
                   offset={10}
                   duration={500}
+                  href="#special"
+                  className="inline-block"
                 >
                   <button type="button">Побробнее об акциях</button>
                 </Link>
