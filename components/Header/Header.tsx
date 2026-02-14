@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import whatsappIcon from "@/assets/whatsapp-svgrepo-com.svg";
 import phoneRedIcon from "@/assets/phone-red.svg";
+import logoDarkBrown from "@/assets/mbb-icon-dark-brown.svg";
 
 const Header = () => {
   const [isBurgerMenuActive, setIsBurgerMenuActive] = useState(false);
@@ -51,9 +52,7 @@ const Header = () => {
             ? "md:block hidden top-bar bg-darkbrown text-lightbrown text-center w-full h-[86px] text-sm md:text-base"
             : "hidden"
         }
-      >
-
-      </div>
+      ></div>
       <header className={`header w-full font-normal z-10 ${headerClassName}`}>
         <div className="container px-4">
           <nav className="flex justify-between items-center">
@@ -72,9 +71,10 @@ const Header = () => {
             </div>
             <div className="flex items-center header-logo justify-center w-1/2 md:w-auto">
               <div className="menu-logo py-2 flex items-center">
-                <a href="#">
-                  <img src="/img/logo.png" alt="Logo" />
-                </a>
+              
+                  <Image src={logoDarkBrown} width="46" height="70" alt="Logo" />
+                  {/* <img src="/img/logo.png" alt="Logo" /> */}
+                
               </div>
               <div className="text-center text-darkbrown md:text-2xl text-md font-normal px-1 md:px-2 cursor-default">
                 <div className="uppercase leading-4 md:leading-6">

@@ -1,15 +1,14 @@
 import Image from "next/image";
 import whatsappIcon from "@/assets/whatsapp-svgrepo-com.svg";
 import phoneNormalIcon from "@/assets/phone-normal.svg";
+import logoLight from "@/assets/mbb-icon-light-brown.svg";
 
 // &copy;
 const Footer = () => {
   return (
     <footer className="text-lightbrown bg-darkbrown py-20">
       <div className="container mx-auto flex items-center sm:flex-row flex-col">
-       
-          <Image src="/img/logo-light.png" alt="Manhattan Beauty Bar Logo" width={60} height={60} />
-
+        <Image src={logoLight} width="60" height="90" alt="Logo" />
         <p
           id="copyright"
           className="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-lightbrown sm:py-2 sm:mt-0 mt-4"
@@ -26,21 +25,21 @@ const Footer = () => {
             href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
           >
             <Image
-                  style={{ display: "inline" }}
-                  src={whatsappIcon}
-                  width={28}
-                  height={28}
-                  alt="WhatsApp"
-                />
+              style={{ display: "inline" }}
+              src={whatsappIcon}
+              width={28}
+              height={28}
+              alt="WhatsApp"
+            />
           </a>
           <a className="ml-3" href="tel:+79263948050">
-          <Image
-                  style={{ display: "inline" }}
-                  src={phoneNormalIcon}
-                  width={28}
-                  height={28}
-                  alt="Phone"
-                />
+            <Image
+              style={{ display: "inline" }}
+              src={phoneNormalIcon}
+              width={28}
+              height={28}
+              alt="Phone"
+            />
           </a>
         </span>
       </div>
