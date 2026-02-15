@@ -24,6 +24,12 @@ main {
   h2, h3, p {
     text-shadow: 1px 1px 4px rgba(96, 69, 60, 0.7);
   }
+
+  @media (max-width: 767px) {
+    background-image: 
+      linear-gradient(rgba(161, 92, 67, 0.62), rgba(161, 92, 67, 0.62)),
+      url(/img/features-mobile.webp);
+  }
 }
 
 #features .material-icons {
