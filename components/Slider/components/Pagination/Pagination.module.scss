@@ -1,0 +1,30 @@
+.pagination {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.paginationDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  &.active {
+    background-color: #fff;
+    width: 12px;
+    height: 12px;
+  }
+}

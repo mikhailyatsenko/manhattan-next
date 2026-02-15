@@ -16,7 +16,7 @@ main {
 
 #features.features-section {
   background-image: 
-    linear-gradient(rgba(91, 62, 52, 0.614), rgba(96, 69, 60, 0.5)),
+       linear-gradient(rgba(143, 86, 58, 0.62), rgba(143, 86, 58, 0.62)),
     url(/img/features.webp);
   background-size: cover;
   background-position: center;
@@ -27,7 +27,7 @@ main {
 
   @media (max-width: 767px) {
     background-image: 
-      linear-gradient(rgba(161, 92, 67, 0.62), rgba(161, 92, 67, 0.62)),
+      linear-gradient(rgba(143, 86, 58, 0.62), rgba(143, 86, 58, 0.62)),
       url(/img/features-mobile.webp);
   }
 }

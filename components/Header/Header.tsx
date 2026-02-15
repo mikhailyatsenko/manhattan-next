@@ -18,7 +18,7 @@ const Header = () => {
     let isThrottled = false;
 
     function stickyMenu() {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 800) {
         setHeaderClassName("in-view fixed");
       } else {
         setHeaderClassName("");
