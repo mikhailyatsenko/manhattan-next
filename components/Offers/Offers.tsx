@@ -48,13 +48,13 @@ const Offers = () => {
                   <div className="flex my-4 justify-center md:justify-end">
                     <div className="w-16 h-[2px] rounded-full bg-lightbrown inline-flex"></div>
                   </div>
-                  <p className="sm:text-2xl text-xl">
+                  {/* <p className="sm:text-2xl text-xl">
                     При комплексном обслуживании «маникюр + гельлак + педикюр +
                     гельлак» <strong>коррекция бровей в подарок.</strong>
-                  </p>
-                  <div className="flex my-4 justify-center md:justify-end">
+                  </p> */}
+                  {/* <div className="flex my-4 justify-center md:justify-end">
                     <div className="w-16 h-[2px] rounded-full bg-lightbrown inline-flex"></div>
-                  </div>
+                  </div> */}
                   <p className="sm:text-2xl text-xl">
                     Приводите своих друзей и{" "}
                     <strong>получайте скидку в 200₽</strong> за каждого нового
