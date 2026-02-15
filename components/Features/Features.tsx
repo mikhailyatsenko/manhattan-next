@@ -28,7 +28,7 @@ const Features = () => {
             параметрам
           </p>
           <div className="flex mt-6 justify-center">
-            <div className="w-16 h-1 rounded-full bg-lightbrown inline-flex"></div>
+            <div className="w-16 h-1 rounded-full bg-white inline-flex"></div>
           </div>
         </div>
         <div className="flex flex-wrap justify-center font-semibold mb-12">
@@ -112,7 +112,7 @@ const Features = () => {
             offset={0}
             duration={500}
             href="#contacts"
-            className="mx-auto text-lightbrown hover:text-darkbrown border border-lightbrown hover:bg-lightbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-normal rounded-sm text-2xl px-5 py-2.5 text-center my-5 transition-all duration-300 ease-in-out inline-block"
+            className="mx-auto text-white hover:text-darkbrown border border-white hover:bg-white focus:ring-0 focus:outline-none font-normal rounded-sm text-2xl px-5 py-2.5 text-center my-5 transition-all duration-300 ease-in-out inline-block"
           >
             Записаться
           </Link>
