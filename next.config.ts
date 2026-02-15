@@ -1,10 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export", // Enable static export for regular hosting (Beget)
+  // Static export for Beget hosting (Apache/PHP)
+  output: "export",
   images: {
-    unoptimized: true, // Disable image optimization for static export
+    unoptimized: true, // Required for static export
   },
+  // Отключаем trailing slash для совместимости с Apache
+  trailingSlash: true,
 };
 
 export default nextConfig;

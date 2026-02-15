@@ -51,16 +51,21 @@ const Prices = () => {
   const categories = prices ? Object.keys(prices) : [];
   const [activeCategory, setActiveCategory] = useState("");
 
-  // Load prices from static JSON
+  // Fetch prices from static JSON file
   useEffect(() => {
     async function loadPrices() {
       try {
         setLoading(true);
-        // Import static prices data
-        const pricesData = await import("../../prices_json/prices.json");
-        setPrices(pricesData.default as PriceCategory);
+        const response = await fetch("/prices/prices.json");
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch prices");
+        }
+
+        const data = await response.json();
+        setPrices(data as PriceCategory);
         // Set first category as active after data is loaded
-        const firstCategory = Object.keys(pricesData.default)[0];
+        const firstCategory = Object.keys(data)[0];
         if (firstCategory) {
           setActiveCategory(firstCategory);
         }

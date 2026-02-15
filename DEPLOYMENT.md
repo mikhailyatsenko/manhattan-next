@@ -2,7 +2,7 @@
 
 ## Подготовка
 
-Проект настроен для работы с Google Sheets API для получения цен.
+Проект использует статический JSON файл для хранения цен (`public/prices/prices.json`).
 
 ## Шаги для деплоя на Vercel
 
@@ -12,78 +12,38 @@
 2. Нажмите "Add New Project"
 3. Импортируйте ваш Git репозиторий
 
-### 2. Настройка переменных окружения
-
-**Важно!** Добавьте переменную окружения `GOOGLE_SHEETS_CREDENTIALS` в настройках проекта на Vercel:
-
-1. В настройках проекта перейдите в **Settings** → **Environment Variables**
-2. Добавьте новую переменную:
-   - **Name**: `GOOGLE_SHEETS_CREDENTIALS`
-   - **Value**: Скопируйте **полное содержимое** JSON с credentials из вашего `.env` файла
-   - **Environment**: Production, Preview, Development
-
-**Как получить значение:**
-```bash
-# Выполните эту команду в терминале (в корне проекта):
-grep GOOGLE_SHEETS_CREDENTIALS .env | cut -d '=' -f 2-
-```
-
-Скопируйте весь вывод и вставьте в Value на Vercel.
-
-**Пример значения (весь JSON в одну строку):**
-```json
-{"type":"service_account","project_id":"manhattan-487210","private_key":"-----BEGIN PRIVATE KEY-----\nMIIE...","client_email":"sheets-price@manhattan-487210.iam.gserviceaccount.com",...}
-```
-
-### 3. Деплой
-
-После добавления переменной окружения:
+### 2. Деплой
 
 1. Нажмите **Deploy**
 2. Vercel автоматически соберет и задеплоит проект
 
-### 4. Проверка
+### 3. Проверка
 
 После деплоя проверьте:
 - Главную страницу
-- API endpoint: `https://your-domain.vercel.app/api/prices`
+- JSON файл с ценами: `https://your-domain.vercel.app/prices/prices.json`
 
 ## Как это работает
 
-1. **Google Sheets** - данные хранятся в таблице: 
-   - https://docs.google.com/spreadsheets/d/14StsbfQBd_b1Hk75bbRpzpfJ6lvvWdVkUz3_tO3xuYE/edit
+1. **Статический JSON файл** (`public/prices/prices.json`) - содержит все цены на услуги
 
-2. **API Route** (`/api/prices`) - получает данные из Google Sheets каждые 5 минут (кеширование)
+2. **Компонент Prices** (`components/Prices/Prices.tsx`) - загружает данные через `fetch('/prices/prices.json')`
 
-3. **Компонент Prices** - отображает данные, полученные через API
-
-4. **Fallback** - если Google Sheets недоступен, используются локальные данные из `prices_json/prices.json`
+3. **Next.js** - автоматически делает файлы из `public/` доступными по корневому URL
 
 ## Обновление цен
 
 Чтобы обновить цены:
-1. Откройте Google Таблицу
-2. Отредактируйте данные (можно добавлять информацию в колонку `additionalInfo`)
-3. Цены обновятся автоматически в течение 5 минут
+1. Отредактируйте файл `public/prices/prices.json`
+2. Закоммитьте изменения в Git
+3. Запушьте в репозиторий
+4. Vercel автоматически пересоберет и задеплоит проект
 
 ## Локальная разработка
 
-1. Создайте файл `.env` в корне проекта (он в `.gitignore`):
-```bash
-GOOGLE_SHEETS_CREDENTIALS={"type":"service_account","project_id":"manhattan-487210",...}
-```
-
-2. Запустите dev сервер:
 ```bash
 npm install
 npm run dev
 ```
 
-**Важно:** Если у вас нет credentials, попросите их у владельца проекта или создайте свой Service Account в Google Cloud Console.
-
-## Безопасность
-
-⚠️ **Важно**: 
-- Файл `.env` добавлен в `.gitignore` и **не должен** попадать в Git!
-- Для Vercel используйте переменную окружения `GOOGLE_SHEETS_CREDENTIALS` (см. выше)
-- Все старые JSON файлы с credentials можно удалить - теперь используется только `.env`
+Откройте http://localhost:3000 для просмотра.
