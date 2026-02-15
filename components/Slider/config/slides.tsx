@@ -33,7 +33,7 @@ export const slides: SlideConfig[] = [
       backgroundPosition: "top center",
     },
     content: (
-      <h1 className="md:text-4xl xl:text-5xl sm:text-3xl text-2xl leading-tight text-white drop-shadow-sm font-normal">
+      <h1 className="md:text-4xl xl:text-5xl sm:text-3xl text-3xl leading-tight text-white drop-shadow-sm font-normal">
         Дарим скидку
         <span className="font-semibold">
           {" "}
@@ -52,7 +52,7 @@ export const slides: SlideConfig[] = [
       backgroundPosition: "top center",
     },
     content: (
-      <h1 className="md:text-4xl xl:text-5xl sm:text-3xl text-2xl leading-tight text-white drop-shadow-sm font-normal">
+      <h1 className="md:text-4xl xl:text-5xl sm:text-3xl text-3xl leading-tight text-white drop-shadow-sm font-normal">
         Приводите своих друзей <br />и получайте{" "}
         <span className="font-semibold">скидку в 200₽</span> за каждого нового
         клиента!
