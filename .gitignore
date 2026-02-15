@@ -47,5 +47,3 @@ next-env.d.ts
 # Temporary files
 tmp_*
 
-# Apache config (auto-generated for Beget deployment)
-/.htaccess
