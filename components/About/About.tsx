@@ -22,7 +22,7 @@ const About = () => {
             <Image
               className="rounded"
               alt="hero"
-              src="/img/promo-image.jpg"
+              src="/img/salon.webp"
               width={800}
               height={600}
             />

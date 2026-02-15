@@ -15,7 +15,15 @@ main {
 }
 
 #features.features-section {
-   background-image: url(/img/features-image2.jpg);
+  background-image: 
+    linear-gradient(rgba(91, 62, 52, 0.614), rgba(96, 69, 60, 0.5)),
+    url(/img/features.webp);
+  background-size: cover;
+  background-position: center;
+  
+  h2, h3, p {
+    text-shadow: 1px 1px 4px rgba(96, 69, 60, 0.7);
+  }
 }
 
 #features .material-icons {

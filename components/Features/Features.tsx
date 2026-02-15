@@ -14,7 +14,7 @@ const Features = () => {
     <section
       ref={ref}
       id="features"
-      className="text-darkbrown bg-center features-section"
+      className="text-white bg-center features-section"
     >
       <div className="container py-20 text-center">
         <div
@@ -112,7 +112,7 @@ const Features = () => {
             offset={0}
             duration={500}
             href="#contacts"
-            className="mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-normal rounded-sm text-2xl px-5 py-2.5 text-center my-5 transition-all duration-300 ease-in-out inline-block"
+            className="mx-auto text-lightbrown hover:text-darkbrown border border-lightbrown hover:bg-lightbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-normal rounded-sm text-2xl px-5 py-2.5 text-center my-5 transition-all duration-300 ease-in-out inline-block"
           >
             Записаться
           </Link>
