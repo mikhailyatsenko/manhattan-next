@@ -1,0 +1,56 @@
+.navArrowLeft,
+.navArrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  padding: 1rem 0.5rem;
+  z-index: 3;
+  background-color: rgba(61, 37, 22, 0.5);
+  color: #d4af7a;
+  border: none;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+    background-color: rgba(61, 37, 22, 0.8);
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+.navArrowLeft {
+  left: 1rem;
+}
+
+.navArrowRight {
+  right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navArrowLeft,
+  .navArrowRight {
+    opacity: 0.7;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .navArrowLeft {
+    left: 0.5rem;
+  }
+
+  .navArrowRight {
+    right: 0.5rem;
+  }
+}
