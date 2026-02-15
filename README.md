@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Manhattan Beauty Bar - Next.js Website
 
-## Getting Started
+Современный сайт салона красоты, построенный на Next.js 16 с поддержкой статической сборки.
 
-First, run the development server:
+## 🚀 Быстрый старт
+
+### Локальная разработка
 
 ```bash
+# Установка зависимостей
+npm install
+
+# Запуск dev сервера
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Сборка для продакшена
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Готовый статический сайт будет в папке `out/` (3.2 MB, 114 файлов).
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Деплой
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Вариант 1: Beget / Обычный хостинг (рекомендуется)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### 🚀 Автоматический деплой через SSH (рекомендуется)
+```bash
+# 1. Настройте SSH ключи (один раз, 5 минут)
+#    См. BEGET-SSH-SETUP.md для подробной инструкции
 
-## Deploy on Vercel
+# 2. После настройки каждый push автоматически деплоится!
+git push origin main
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### 📤 Ручной деплой через FTP
+```bash
+npm run build
+# Загрузите содержимое папки out/ на хостинг через FTP
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✅ Статическая сборка  
+✅ Работает на любом хостинге  
+✅ Быстрая загрузка  
+✅ Автоматический деплой через GitHub Actions (SSH)  
+⚠️ Цены из `prices_json/prices.json` (требует пересборки для обновления)
+
+### Вариант 2: Vercel (для динамических цен)
+
+**Инструкция:** См. `DEPLOYMENT.md`
+
+✅ Автоматический деплой при push  
+✅ Динамические цены из Google Sheets  
+✅ Обновление каждые 5 минут  
+⚠️ Требует настройки Google Sheets API
+
+## 📁 Структура проекта
+
+```
+├── app/                    # Next.js App Router
+│   ├── api/prices/        # API route (только для Vercel)
+│   └── page.tsx           # Главная страница
+├── components/            # React компоненты
+│   ├── Header/
+│   ├── Prices/           # Компонент цен
+│   └── ...
+├── prices_json/          # Статические данные
+│   └── prices.json       # Цены (используется в статической сборке)
+├── public/               # Статические файлы
+├── out/                  # Готовая сборка (после npm run build)
+└── ...
+```
+
+## 🔧 Технологии
+
+- **Next.js 16** - React framework
+- **TypeScript** - Типизация
+- **Tailwind CSS** - Стили
+- **SCSS** - Дополнительные стили
+- **React Scroll** - Плавная прокрутка
+- **Google Sheets API** - Динамические цены (опционально)
+
+## 🎨 Функции
+
+- ✅ Адаптивный дизайн (мобильные устройства)
+- ✅ SEO оптимизация
+- ✅ Быстрая загрузка страниц
+- ✅ Галерея работ
+- ✅ Интерактивная карта
+- ✅ Раздел с ценами (4 категории)
+- ✅ Форма обратной связи
+
+## 📝 Обновление цен
+
+### Для статической версии (Beget):
+1. Отредактируйте `prices_json/prices.json`
+2. Выполните `npm run build`
+3. Загрузите обновленный `out/` на хостинг
+
+### Для Vercel версии:
+1. Отредактируйте Google Таблицу
+2. Изменения применятся автоматически через 5 минут
+
+## 📚 Документация
+
+- `BEGET-SSH-SETUP.md` - ⭐ Автоматический деплой через SSH (рекомендуется)
+- `BEGET-QUICKSTART.md` - Быстрый ручной деплой на Beget
+- `DEPLOYMENT-BEGET.md` - Полная инструкция для Beget
+- `DEPLOYMENT.md` - Инструкция для Vercel
+- `README-PRICES.md` - Управление ценами
+
+## 🤝 Поддержка
+
+По вопросам деплоя и настройки обращайтесь к соответствующим файлам документации.
