@@ -8,7 +8,8 @@
     "build:static": "next build && cp .htaccess out/.htaccess",
     "start": "next start",
     "lint": "eslint",
-    "export": "next build"
+    "export": "next build",
+    "deploy:beget": "bash scripts/deploy_beget.sh --yes"
   },
   "dependencies": {
     "next": "16.1.6",
