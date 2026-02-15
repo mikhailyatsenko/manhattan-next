@@ -52,7 +52,17 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
+          href="img/slide-1-sm.webp"
+          type="image/webp"
+          media="(max-width: 767px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
           href="img/slide-1.webp"
+          type="image/webp"
+          media="(min-width: 768px)"
           fetchPriority="high"
         />
       </head>
