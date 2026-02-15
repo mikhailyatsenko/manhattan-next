@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { SlideItem } from "./components/SlideItem/SlideItem";
-import { NavigationArrows } from "./components/NavigationArrows/NavigationArrows";
+// import { NavigationArrows } from "./components/NavigationArrows/NavigationArrows";
 import { Pagination } from "./components/Pagination/Pagination";
 import { useAutoScroll } from "./hooks/useAutoScroll";
 import { useSliderScroll } from "./hooks/useSliderScroll";
@@ -23,12 +23,12 @@ const Slider: React.FC = () => {
 
   // Scroll state and controls
   const {
-    canScrollLeft,
-    canScrollRight,
+    // canScrollLeft,
+    // canScrollRight,
     currentSlide,
     scrollToSlide,
-    scrollPrevious,
-    scrollNext,
+    // scrollPrevious,
+    // scrollNext,
   } = useSliderScroll({
     sliderRef,
     isAutoScrollingRef,
@@ -50,13 +50,13 @@ const Slider: React.FC = () => {
           />
         ))}
       </div>
-
+{/* 
       <NavigationArrows
         canScrollLeft={canScrollLeft}
         canScrollRight={canScrollRight}
         onPrevious={scrollPrevious}
         onNext={scrollNext}
-      />
+      /> */}
 
       <Pagination
         totalSlides={slides.length}
