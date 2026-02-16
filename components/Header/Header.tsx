@@ -69,8 +69,12 @@ const Header = () => {
                 <div className="leading-5 md:leading-6">beauty bar</div>
               </div>
             </div>
-            <div className="md:hidden w-1/4 items-center grow gap-4 justify-end flex text-3xl z-[6] leading-4">
-              <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
+            <div className="md:hidden w-1/4 items-center grow gap-2 justify-end flex text-3xl z-[6] leading-4">
+              <a 
+                href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
+                aria-label="Написать в WhatsApp"
+              >
                 <Image
                   src={whatsappIcon}
                   width={32}
@@ -78,7 +82,11 @@ const Header = () => {
                   alt="WhatsApp"
                 />
               </a>
-              <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
+              <a 
+                href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
+                aria-label="Написать в Telegram"
+              >
                 <Image
                   style={{ display: "inline" }}
                   src={telegramIcon}
@@ -87,7 +95,11 @@ const Header = () => {
                   alt="Telegram"
                 />
               </a>
-              <a href="tel:+79263948050">
+              <a 
+                href="tel:+79263948050"
+                className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
+                aria-label="Позвонить по телефону"
+              >
                 <Image src={phoneRedIcon} width={32} height={32} alt="Phone" />
               </a>
             </div>

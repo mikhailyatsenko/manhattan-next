@@ -17,11 +17,15 @@ const Footer = () => {
         >
           {"© " + new Date().getFullYear() + ' "Манхэттен beauty bar"'}
         </p>
-        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start text-2xl md:text-3xl">
+        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start text-2xl md:text-3xl gap-2">
           {/* <a href="https://www.instagram.com/manhattan.bb/" target="_blank">
             <i className="fa-brands fa-instagram" aria-hidden="true"></i>
           </a> */}
-          <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
+          <a 
+            href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+            className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
+            aria-label="Написать в WhatsApp"
+          >
             <Image
               style={{ display: "inline" }}
               src={whatsappIcon}
@@ -31,8 +35,9 @@ const Footer = () => {
             />
           </a>
           <a
-            className="ml-3"
             href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+            className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
+            aria-label="Написать в Telegram"
           >
             <Image
               style={{ display: "inline" }}
@@ -42,7 +47,11 @@ const Footer = () => {
               alt="Telegram"
             />
           </a>
-          <a className="ml-3" href="tel:+79263948050">
+          <a 
+            href="tel:+79263948050"
+            className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
+            aria-label="Позвонить по телефону"
+          >
             <Image
               style={{ display: "inline" }}
               src={phoneNormalIcon}

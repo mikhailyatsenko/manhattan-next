@@ -36,13 +36,8 @@
     padding-bottom: 1rem;
   }
 
-  a {
-    // Ensure the link wrapper has proper touch target
+  .promoButton {
     display: inline-block;
-    text-decoration: none;
-  }
-
-  button {
     color: #fff;
     border: 1px solid #fff;
     background-color: transparent;
@@ -54,9 +49,11 @@
     margin-bottom: 1.25rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
     // Ensure minimum touch target size of 48x48px
     min-height: 48px;
     min-width: fit-content;
+    box-sizing: border-box;
 
     &:hover {
       color: #3d2516;
@@ -70,7 +67,7 @@
   }
 
   @media (max-width: 768px) {
-    button {
+    .promoButton {
       font-size: 1.25rem;
       padding: 0.875rem 1.75rem;
     }

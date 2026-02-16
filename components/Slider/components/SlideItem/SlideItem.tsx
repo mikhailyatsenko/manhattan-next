@@ -44,9 +44,9 @@ export const SlideItem: React.FC<SlideItemProps> = ({
             offset={10}
             duration={500}
             href="#special"
-            className="inline-block"
+            className={styles.promoButton}
           >
-            <button type="button">Подробнее об акциях</button>
+            Подробнее об акциях
           </Link>
         </div>
       </div>
