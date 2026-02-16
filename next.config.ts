@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
   },
   // Отключаем trailing slash для совместимости с Apache
   trailingSlash: true,
+  // Optimize CSS for production
+  experimental: {
+    optimizeCss: true,
+  },
 };
 
 export default nextConfig;

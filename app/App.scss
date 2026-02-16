@@ -32,19 +32,6 @@ main {
   }
 }
 
-#features .material-icons {
-  font-size: 40px;
-}
-
-.service {
-  margin-right: 0.5em;
-  text-align: left;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-  display: flex;
-  line-height: 1;
-}
 
 .years15-section:after {
   background-color: #5a3939;
@@ -131,11 +118,6 @@ main {
   z-index: 2;
 }
 
-.price-txt p {
-  font-weight: 400;
-  margin-top: 5px;
-  margin-bottom: 0;
-}
 
 #promo-1:before,
 #promo-1:after {
