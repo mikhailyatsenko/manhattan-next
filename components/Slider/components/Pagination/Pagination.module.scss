@@ -4,25 +4,38 @@
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 0.5rem;
+  gap: 0.25rem;
   z-index: 3;
 }
 
 .paginationDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
+  // Minimum touch target size of 48x48px for accessibility
+  min-width: 48px;
+  min-height: 48px;
   padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &:hover {
+  // Visual dot inside the touch target
+  &::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+  }
+
+  &:hover::after {
     background-color: rgba(255, 255, 255, 0.8);
   }
 
-  &.active {
+  &.active::after {
     background-color: #fff;
     width: 12px;
     height: 12px;

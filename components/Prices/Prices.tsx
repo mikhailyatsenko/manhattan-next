@@ -20,21 +20,16 @@ const PriceItemComponent = ({ item }: PriceItemProps) => {
     <li>
       <div className="detail-price">
         <div className="price-name">
-          <h5 className="text-base">
-            {item.service.split("\n").map((line, index, array) => (
-              <span key={index}>
-                {line}
-                {index < array.length - 1 && <br />}
-              </span>
-            ))}
-          </h5>
+          <div className="text-base">
+            <span>{item.service}</span>
+          </div>
           {item.additionalInfo && (
             <p className="text-sm text-gray-600 mt-1">{item.additionalInfo}</p>
           )}
         </div>
         <div className="price-dots"></div>
         <div className="price-number">
-          <h5 className="text-base">{formatPrice(item.price, item.prefix)}</h5>
+          <div className="text-base font-medium">{formatPrice(item.price, item.prefix)}</div>
         </div>
       </div>
     </li>
@@ -141,9 +136,9 @@ const Prices = () => {
                 isInView ? "is-visible" : ""
               }`}
             >
-              <div className="text-center w-full text-3xl">
+              <h2 className="text-center w-full text-3xl font-normal">
                 {activeCategory}
-              </div>
+              </h2>
               <div className="p-4 w-full flex flex-col text-center items-center">
                 <ul className="w-full max-w-4xl">
                   {prices[activeCategory]?.map((item, index) => (
