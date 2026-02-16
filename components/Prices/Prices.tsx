@@ -117,17 +117,20 @@ const Prices = () => {
 
             <div className="masters-tabs border border-darkbrown rounded">
               {categories.map((category) => (
-                <div
+                <button
                   key={category}
+                  type="button"
                   onClick={() => setActiveCategory(category)}
                   className={`master-tab transition-all duration-300 ease-in-out cursor-pointer hover:bg-mediumbrown hover:text-lightbrown ${
                     activeCategory === category
                       ? "bg-darkbrown text-lightbrown"
                       : ""
                   }`}
+                  aria-pressed={activeCategory === category}
+                  aria-label={`Показать категорию ${category}`}
                 >
                   {category}
-                </div>
+                </button>
               ))}
             </div>
 

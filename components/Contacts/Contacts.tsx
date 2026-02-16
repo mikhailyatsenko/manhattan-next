@@ -39,7 +39,10 @@ const Contacts = () => {
             </p>
 
             <p className="sm:text-2xl text-2xl mb-1">
-              <a className="sm:ml-3" href="tel:+79263948050">
+              <a 
+                className="sm:ml-3 inline-flex items-center gap-1 min-h-[48px]" 
+                href="tel:+79263948050"
+              >
                 8 (985) 411-43-54{" "}
                 <Image
                   style={{ display: "inline" }}
@@ -50,8 +53,11 @@ const Contacts = () => {
                 />
               </a>
             </p>
-            <p className="sm:text-2xl text-2xl mb-1">
-              <a className="sm:ml-3" href="tel:+79263948050">
+            <p className="sm:text-2xl text-2xl mb-1 flex flex-wrap items-center gap-2">
+              <a 
+                className="sm:ml-3 inline-flex items-center gap-1 min-h-[48px]" 
+                href="tel:+79263948050"
+              >
                 8 (926) 394-80-50{" "}
                 <Image
                   style={{ display: "inline" }}
@@ -60,8 +66,12 @@ const Contacts = () => {
                   height={28}
                   alt="Phone"
                 />
-              </a>{" "}
-              <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
+              </a>
+              <a 
+                href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
+                aria-label="Написать в WhatsApp"
+              >
                 <Image
                   style={{ display: "inline" }}
                   src={whatsappIcon}
@@ -69,8 +79,12 @@ const Contacts = () => {
                   height={28}
                   alt="WhatsApp"
                 />
-              </a>{" "}
-              <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
+              </a>
+              <a 
+                href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
+                aria-label="Написать в Telegram"
+              >
                 <Image
                   style={{ display: "inline" }}
                   src={telegramIcon}
@@ -81,43 +95,39 @@ const Contacts = () => {
               </a>
             </p>
             <div className="flex flex-col mt-4 gap-2 w-full max-w-sm">
-              <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
-                <button
-                  id="button-whatsapp"
-                  type="button"
-                  className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all duration-300 ease-in-out"
-                >
-                  Записаться через{" "}
-                  <span className="text-nowrap">
-                    WhatsApp{" "}
-                    <Image
-                      style={{ display: "inline" }}
-                      src={whatsappIcon}
-                      width={28}
-                      height={28}
-                      alt="WhatsApp"
-                    />
-                  </span>
-                </button>
+              <a
+                id="button-whatsapp"
+                href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all duration-300 ease-in-out min-h-[48px] flex items-center justify-center no-underline"
+              >
+                Записаться через{" "}
+                <span className="text-nowrap">
+                  WhatsApp{" "}
+                  <Image
+                    style={{ display: "inline" }}
+                    src={whatsappIcon}
+                    width={28}
+                    height={28}
+                    alt="WhatsApp"
+                  />
+                </span>
               </a>
-              <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
-                <button
-                  id="button-telegram"
-                  type="button"
-                  className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-sky-300 to-blue-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-sky-200 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all ease-in-out"
-                >
-                  Записаться через{" "}
-                  <span className="text-nowrap">
-                    Telegram{" "}
-                    <Image
-                      style={{ display: "inline" }}
-                      src={telegramIcon}
-                      width={28}
-                      height={28}
-                      alt="Telegram"
-                    />
-                  </span>
-                </button>
+              <a
+                id="button-telegram"
+                href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-sky-300 to-blue-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-sky-200 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all ease-in-out min-h-[48px] flex items-center justify-center no-underline"
+              >
+                Записаться через{" "}
+                <span className="text-nowrap">
+                  Telegram{" "}
+                  <Image
+                    style={{ display: "inline" }}
+                    src={telegramIcon}
+                    width={28}
+                    height={28}
+                    alt="Telegram"
+                  />
+                </span>
               </a>
             </div>
 

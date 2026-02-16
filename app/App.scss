@@ -225,7 +225,11 @@ main {
   width: 200px;
   text-align: center;
   line-height: 1.2;
-  padding: 4px;
+  padding: 12px 4px;
+  min-height: 48px;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
   &:not(:first-child) {
     border-left: #5a3939 1px solid;
   }
