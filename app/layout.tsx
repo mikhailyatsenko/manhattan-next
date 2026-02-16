@@ -37,6 +37,13 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        {/* Preconnect to Google Fonts - must be early for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link
           rel="icon"
           type="image/png"

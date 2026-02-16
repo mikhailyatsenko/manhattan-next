@@ -22,7 +22,6 @@ export const SlideItem: React.FC<SlideItemProps> = ({
   customStyles = {},
 }) => {
   const backgroundImage = isMobile && mobileImage ? mobileImage : desktopImage;
-  console.log("SlideItem render:", { id, backgroundImage, customStyles });
   return (
     <div
       className={styles.slideItem}

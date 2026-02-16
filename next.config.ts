@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: false, // Enable image optimization on Vercel
   },
+  // Optimize CSS for production
+  experimental: {
+    optimizeCss: true,
+  },
 };
 
 export default nextConfig;
