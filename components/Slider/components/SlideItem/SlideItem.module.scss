@@ -36,6 +36,12 @@
     padding-bottom: 1rem;
   }
 
+  a {
+    // Ensure the link wrapper has proper touch target
+    display: inline-block;
+    text-decoration: none;
+  }
+
   button {
     color: #fff;
     border: 1px solid #fff;
