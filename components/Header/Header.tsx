@@ -69,7 +69,7 @@ const Header = () => {
                 <div className="leading-5 md:leading-6">beauty bar</div>
               </div>
             </div>
-            <div className="md:hidden w-1/4 items-center grow gap-2 justify-end flex text-3xl z-[6] leading-4">
+            <div className="md:hidden items-center grow gap-2 justify-end flex text-3xl z-[6] leading-4">
               <a 
                 href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
                 className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
