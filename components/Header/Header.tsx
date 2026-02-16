@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import whatsappIcon from "@/assets/whatsapp-svgrepo-com.svg";
+import telegramIcon from "@/assets/telegram-svgrepo-com.svg";
 import phoneRedIcon from "@/assets/phone-red.svg";
 import logoDarkBrown from "@/assets/mbb-icon-dark-brown.svg";
 
@@ -55,26 +56,11 @@ const Header = () => {
       ></div>
       <header className={`header w-full font-normal z-10 ${headerClassName}`}>
         <div className="container px-4">
-          <nav className="flex justify-between items-center">
-            <div className="md:hidden w-1/4 gap-4 md:w-auto flex text-3xl z-[6]">
-              <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
-                <Image
-                  src={whatsappIcon}
-                  width={32}
-                  height={32}
-                  alt="WhatsApp"
-                />
-              </a>
-              <a href="tel:+79263948050">
-                <Image src={phoneRedIcon} width={32} height={32} alt="Phone" />
-              </a>
-            </div>
-            <div className="flex items-center header-logo justify-center w-1/2 md:w-auto">
+          <nav className="flex justify-between gap-4 items-center">
+            <div className="flex items-center header-logo justify-center md:w-auto">
               <div className="menu-logo py-2 flex items-center">
-              
-                  <Image src={logoDarkBrown} width="46" height="70" alt="Logo" />
-                  {/* <img src="/img/logo.png" alt="Logo" /> */}
-                
+                <Image src={logoDarkBrown} width="46" height="70" alt="Logo" />
+                {/* <img src="/img/logo.png" alt="Logo" /> */}
               </div>
               <div className="text-center text-darkbrown md:text-2xl text-md font-normal px-1 md:px-2 cursor-default">
                 <div className="uppercase leading-4 md:leading-6">
@@ -83,7 +69,29 @@ const Header = () => {
                 <div className="leading-5 md:leading-6">beauty bar</div>
               </div>
             </div>
-            <div className="w-1/4 md:w-auto flex justify-end">
+            <div className="md:hidden w-1/4 items-center grow gap-4 justify-end flex text-3xl z-[6] leading-4">
+              <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
+                <Image
+                  src={whatsappIcon}
+                  width={32}
+                  height={32}
+                  alt="WhatsApp"
+                />
+              </a>
+              <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр. ">
+                <Image
+                  style={{ display: "inline" }}
+                  src={telegramIcon}
+                  width={32}
+                  height={32}
+                  alt="Telegram"
+                />
+              </a>
+              <a href="tel:+79263948050">
+                <Image src={phoneRedIcon} width={32} height={32} alt="Phone" />
+              </a>
+            </div>
+            <div className="ml-2 w-fit flex justify-end">
               <div
                 onClick={switcherBurgerMenu}
                 className={`burger-icon ${isBurgerMenuActive ? "active" : ""}`}
