@@ -29,7 +29,7 @@ const PriceItemComponent = ({ item }: PriceItemProps) => {
         </div>
         <div className="price-dots"></div>
         <div className="price-number">
-          <div className="text-base font-semibold">{formatPrice(item.price, item.prefix)}</div>
+          <div className="text-base font-normal">{formatPrice(item.price, item.prefix)}</div>
         </div>
       </div>
     </li>
