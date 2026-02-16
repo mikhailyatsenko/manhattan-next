@@ -70,7 +70,7 @@ const Contacts = () => {
                   alt="WhatsApp"
                 />
               </a>{" "}
-              <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр. ">
+              <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
                 <Image
                   style={{ display: "inline" }}
                   src={telegramIcon}
@@ -99,7 +99,7 @@ const Contacts = () => {
                 </span>
               </button>
             </a>
-            <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
+           <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
               <button
                 id="button-whatsapp"
                 type="button"
