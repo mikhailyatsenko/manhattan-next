@@ -1,5 +1,6 @@
 import Image from "next/image";
 import whatsappIcon from "@/assets/whatsapp-svgrepo-com.svg";
+import telegramIcon from "@/assets/telegram-svgrepo-com.svg";
 import phoneNormalIcon from "@/assets/phone-normal.svg";
 import logoLight from "@/assets/mbb-icon-light-brown.svg";
 
@@ -30,6 +31,15 @@ const Footer = () => {
               width={28}
               height={28}
               alt="WhatsApp"
+            />
+          </a>
+          <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр. ">
+            <Image
+              style={{ display: "inline" }}
+              src={telegramIcon}
+              width={28}
+              height={28}
+              alt="Telegram"
             />
           </a>
           <a className="ml-3" href="tel:+79263948050">
