@@ -21,10 +21,7 @@ const Footer = () => {
           {/* <a href="https://www.instagram.com/manhattan.bb/" target="_blank">
             <i className="fa-brands fa-instagram" aria-hidden="true"></i>
           </a> */}
-          <a
-            className="ml-3"
-            href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
-          >
+          <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
             <Image
               style={{ display: "inline" }}
               src={whatsappIcon}
@@ -33,7 +30,10 @@ const Footer = () => {
               alt="WhatsApp"
             />
           </a>
-          <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр. ">
+          <a
+            className="ml-3"
+            href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр. "
+          >
             <Image
               style={{ display: "inline" }}
               src={telegramIcon}
