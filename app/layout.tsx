@@ -5,7 +5,7 @@ import "./App.scss";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin", "cyrillic"],
-  weight: ["200", "300", "400", "500", "600"],
+  weight: ["300", "400", "600"],
   display: "swap",
   variable: "--font-source-serif",
 });
