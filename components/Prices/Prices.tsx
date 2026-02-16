@@ -29,7 +29,7 @@ const PriceItemComponent = ({ item }: PriceItemProps) => {
         </div>
         <div className="price-dots"></div>
         <div className="price-number">
-          <div className="text-base font-medium">{formatPrice(item.price, item.prefix)}</div>
+          <div className="text-base font-semibold">{formatPrice(item.price, item.prefix)}</div>
         </div>
       </div>
     </li>
@@ -111,7 +111,7 @@ const Prices = () => {
 
         {!loading && !error && prices && (
           <>
-            <div className="text-center text-base font-bold mt-4">
+            <div className="text-center text-base font-semibold mt-4">
               Выберите категорию услуг:
             </div>
 
