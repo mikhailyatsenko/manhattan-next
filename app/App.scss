@@ -4,7 +4,6 @@ main {
   position: relative;
 }
 
-
 .menu-logo img {
   max-height: 70px;
 }
@@ -15,23 +14,24 @@ main {
 }
 
 #features.features-section {
-  background-image: 
-       linear-gradient(rgba(143, 86, 58, 0.62), rgba(143, 86, 58, 0.62)),
+  background-image:
+    linear-gradient(rgba(143, 86, 58, 0.62), rgba(143, 86, 58, 0.62)),
     url(/img/features.webp);
   background-size: cover;
   background-position: center;
-  
-  h2, h3, p {
+
+  h2,
+  h3,
+  p {
     text-shadow: 1px 1px 4px rgba(96, 69, 60, 0.7);
   }
 
   @media (max-width: 767px) {
-    background-image: 
+    background-image:
       linear-gradient(rgba(143, 86, 58, 0.62), rgba(143, 86, 58, 0.62)),
       url(/img/features-mobile.webp);
   }
 }
-
 
 .years15-section:after {
   background-color: #5a3939;
@@ -118,7 +118,6 @@ main {
   z-index: 2;
 }
 
-
 #promo-1:before,
 #promo-1:after {
   position: absolute;
@@ -188,7 +187,8 @@ main {
     transform: translate(0, 0);
   }
 
-  #button-whatsapp, #button-telegram {
+  #button-whatsapp,
+  #button-telegram {
     display: none;
   }
 }
@@ -198,6 +198,9 @@ main {
   justify-content: center;
   margin: 5px auto 10px;
   max-width: 400px;
+  @media (min-width: 768px) {
+    max-width: fit-content
+  }
 }
 
 .master-tab {
@@ -208,12 +211,15 @@ main {
   text-align: center;
   line-height: 1.2;
   padding: 2px 6px;
-  min-height: 48px;
+  min-height: 36px;
   border: none;
   font-size: inherit;
   font-family: inherit;
   &:not(:first-child) {
     border-left: #5a3939 1px solid;
+  }
+   @media (min-width: 768px) {
+  padding: 2px 12px;
   }
 }
 
