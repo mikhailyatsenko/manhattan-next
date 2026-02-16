@@ -80,44 +80,47 @@ const Contacts = () => {
                 />
               </a>
             </p>
-            <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
-              <button
-                id="button-whatsapp"
-                type="button"
-                className="animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all duration-300 ease-in-out"
-              >
-                Записаться через{" "}
-                <span className="text-nowrap">
-                  WhatsApp{" "}
-                  <Image
-                    style={{ display: "inline" }}
-                    src={whatsappIcon}
-                    width={28}
-                    height={28}
-                    alt="WhatsApp"
-                  />
-                </span>
-              </button>
-            </a>
-           <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
-              <button
-                id="button-whatsapp"
-                type="button"
-                className="animate-pulse text-darkbrown bg-gradient-to-r from-sky-300 to-blue-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-sky-200 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all ease-in-out"
-              >
-                Записаться через{" "}
-                <span className="text-nowrap">
-                  Telegram{" "}
-                  <Image
-                    style={{ display: "inline" }}
-                    src={telegramIcon}
-                    width={28}
-                    height={28}
-                    alt="Telegram"
-                  />
-                </span>
-              </button>
-            </a>
+            <div className="flex flex-col mt-4 gap-2 w-full max-w-sm">
+              <a href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
+                <button
+                  id="button-whatsapp"
+                  type="button"
+                  className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all duration-300 ease-in-out"
+                >
+                  Записаться через{" "}
+                  <span className="text-nowrap">
+                    WhatsApp{" "}
+                    <Image
+                      style={{ display: "inline" }}
+                      src={whatsappIcon}
+                      width={28}
+                      height={28}
+                      alt="WhatsApp"
+                    />
+                  </span>
+                </button>
+              </a>
+              <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
+                <button
+                  id="button-telegram"
+                  type="button"
+                  className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-sky-300 to-blue-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-sky-200 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all ease-in-out"
+                >
+                  Записаться через{" "}
+                  <span className="text-nowrap">
+                    Telegram{" "}
+                    <Image
+                      style={{ display: "inline" }}
+                      src={telegramIcon}
+                      width={28}
+                      height={28}
+                      alt="Telegram"
+                    />
+                  </span>
+                </button>
+              </a>
+            </div>
+
             <h2 className="sm:text-5xl text-4xl font-normal pt-8">
               Как нас найти:
             </h2>
