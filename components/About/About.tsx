@@ -15,12 +15,12 @@ const About = () => {
       <div className="container">
         <div className="flex justify-center items-center flex-wrap z-[2] relative">
           <div
-            className={`md:w-1/2 w-full mb-10 md:mb-0 md:m-0 -m-36 overflow-hidden animate-in animate-from-right ${
+            className={` rounded-md overflow-hidden md:w-1/2 w-full mb-10 md:mb-0 md:m-0 -m-36 overflow-hidden animate-in animate-from-right shadow-[1px_-1px_10px_#5b4d4ae3] ${
               isInView ? "is-visible" : ""
             }`}
           >
             <Image
-              className="rounded"
+             
               alt="hero"
               src="/img/salon.webp"
               width={800}
