@@ -40,10 +40,10 @@ const Contacts = () => {
 
             <p className="sm:text-2xl text-2xl mb-1">
               <a 
-                className="sm:ml-3 inline-flex items-center gap-1 min-h-[48px]" 
+                className="sm:ml-3 inline-flex items-center gap-1" 
                 href="tel:+79263948050"
               >
-                8 (985) 411-43-54{" "}
+                8 (985) 411-43-54
                 <Image
                   style={{ display: "inline" }}
                   src={phoneNormalIcon}
@@ -55,12 +55,12 @@ const Contacts = () => {
             </p>
             <p className="sm:text-2xl text-2xl mb-1 flex flex-wrap items-center gap-2">
               <a 
-                className="sm:ml-3 inline-flex items-center gap-1 min-h-[48px]" 
+                className="sm:ml-3 inline-flex items-center gap-1" 
                 href="tel:+79263948050"
               >
-                8 (926) 394-80-50{" "}
+                8 (926) 394-80-50
                 <Image
-                  style={{ display: "inline" }}
+                  style={{ display: "inline", margin: "4px" }}
                   src={phoneNormalIcon}
                   width={28}
                   height={28}
@@ -69,7 +69,7 @@ const Contacts = () => {
               </a>
               <a 
                 href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
-                className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
+                className="inline-flex items-center justify-center p-1"
                 aria-label="Написать в WhatsApp"
               >
                 <Image
@@ -82,7 +82,7 @@ const Contacts = () => {
               </a>
               <a 
                 href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
-                className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
+                className="inline-flex items-center justify-center p-1"
                 aria-label="Написать в Telegram"
               >
                 <Image
@@ -98,11 +98,11 @@ const Contacts = () => {
               <a
                 id="button-whatsapp"
                 href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
-                className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all duration-300 ease-in-out min-h-[48px] flex items-center justify-center no-underline"
+                className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all duration-300 ease-in-out no-underline"
               >
-                Записаться через{" "}
-                <span className="text-nowrap">
-                  WhatsApp{" "}
+                Записаться через {" "}
+                <span className="text-nowrap inline-flex gap-1">
+                  WhatsApp
                   <Image
                     style={{ display: "inline" }}
                     src={whatsappIcon}
@@ -115,11 +115,11 @@ const Contacts = () => {
               <a
                 id="button-telegram"
                 href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
-                className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-sky-300 to-blue-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-sky-200 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all ease-in-out min-h-[48px] flex items-center justify-center no-underline"
+                className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-sky-300 to-blue-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-sky-200 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all ease-in-out no-underline"
               >
-                Записаться через{" "}
-                <span className="text-nowrap">
-                  Telegram{" "}
+                Записаться через {" "}
+                <span className="text-nowrap inline-flex gap-1">
+                  Telegram
                   <Image
                     style={{ display: "inline" }}
                     src={telegramIcon}
