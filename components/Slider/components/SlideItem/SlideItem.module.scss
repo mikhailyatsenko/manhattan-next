@@ -40,7 +40,7 @@
     color: #fff;
     border: 1px solid #fff;
     background-color: transparent;
-    padding: 0.625rem 1.25rem;
+    padding: 0.75rem 1.5rem;
     font-size: 1.5rem;
     font-weight: 500;
     border-radius: 0.125rem;
@@ -48,6 +48,9 @@
     margin-bottom: 1.25rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    // Ensure minimum touch target size of 48x48px
+    min-height: 48px;
+    min-width: fit-content;
 
     &:hover {
       color: #3d2516;
@@ -55,13 +58,15 @@
     }
 
     &:focus {
-      outline: none;
+      outline: 2px solid rgba(255, 255, 255, 0.5);
+      outline-offset: 2px;
     }
   }
 
   @media (max-width: 768px) {
     button {
       font-size: 1.25rem;
+      padding: 0.875rem 1.75rem;
     }
   }
 }
