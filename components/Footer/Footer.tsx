@@ -32,7 +32,7 @@ const Footer = () => {
           </a>
           <a
             className="ml-3"
-            href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр. "
+            href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
           >
             <Image
               style={{ display: "inline" }}

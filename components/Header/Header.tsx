@@ -78,7 +78,7 @@ const Header = () => {
                   alt="WhatsApp"
                 />
               </a>
-              <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр. ">
+              <a href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+">
                 <Image
                   style={{ display: "inline" }}
                   src={telegramIcon}
