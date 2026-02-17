@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 interface UseAutoScrollOptions {
   sliderRef: React.RefObject<HTMLDivElement | null>;
@@ -11,55 +11,57 @@ export const useAutoScroll = ({
   intervalMs = 1000,
   delayMs = 5000,
 }: UseAutoScrollOptions) => {
-  const [lastInteractionTime, setLastInteractionTime] = useState(Date.now());
-  const autoScrollIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const autoScrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isAutoScrollingRef = useRef(false);
 
+  const scrollToNext = useCallback(() => {
+    const scroller = sliderRef.current;
+    if (!scroller) return;
+
+    isAutoScrollingRef.current = true;
+
+    const { scrollLeft, scrollWidth, clientWidth } = scroller;
+
+    // If we're at the end, scroll back to start
+    if (scrollLeft >= scrollWidth - clientWidth - 1) {
+      scroller.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      // Scroll to next slide
+      scroller.scrollBy({ left: clientWidth, behavior: "smooth" });
+    }
+
+    // Reset flag after scroll animation completes
+    setTimeout(() => {
+      isAutoScrollingRef.current = false;
+    }, 500);
+
+    // Schedule next auto-scroll
+    autoScrollTimeoutRef.current = setTimeout(scrollToNext, delayMs);
+  }, [sliderRef, delayMs]);
+
   const resetAutoScrollTimer = useCallback(() => {
-    setLastInteractionTime(Date.now());
-  }, []);
+    // Clear existing timeout
+    if (autoScrollTimeoutRef.current) {
+      clearTimeout(autoScrollTimeoutRef.current);
+    }
+
+    // Start new timeout
+    autoScrollTimeoutRef.current = setTimeout(scrollToNext, delayMs);
+  }, [scrollToNext, delayMs]);
 
   useEffect(() => {
     const scroller = sliderRef.current;
     if (!scroller) return;
 
-    const startAutoScroll = () => {
-      if (autoScrollIntervalRef.current) {
-        clearInterval(autoScrollIntervalRef.current);
-      }
-
-      autoScrollIntervalRef.current = setInterval(() => {
-        const timeSinceLastInteraction = Date.now() - lastInteractionTime;
-
-        if (timeSinceLastInteraction >= delayMs) {
-          isAutoScrollingRef.current = true;
-
-          const { scrollLeft, scrollWidth, clientWidth } = scroller;
-
-          // If we're at the end, scroll back to start
-          if (scrollLeft >= scrollWidth - clientWidth - 1) {
-            scroller.scrollTo({ left: 0, behavior: "smooth" });
-          } else {
-            // Scroll to next slide
-            scroller.scrollBy({ left: clientWidth, behavior: "smooth" });
-          }
-
-          // Reset flag after scroll animation completes
-          setTimeout(() => {
-            isAutoScrollingRef.current = false;
-          }, 500);
-        }
-      }, intervalMs);
-    };
-
-    startAutoScroll();
+    // Start auto-scroll after initial delay
+    autoScrollTimeoutRef.current = setTimeout(scrollToNext, delayMs);
 
     return () => {
-      if (autoScrollIntervalRef.current) {
-        clearInterval(autoScrollIntervalRef.current);
+      if (autoScrollTimeoutRef.current) {
+        clearTimeout(autoScrollTimeoutRef.current);
       }
     };
-  }, [lastInteractionTime, sliderRef, intervalMs, delayMs]);
+  }, [sliderRef, scrollToNext, delayMs]);
 
   return {
     resetAutoScrollTimer,
