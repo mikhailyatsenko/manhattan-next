@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import type { PriceCategory, PriceItem } from "../../types/prices";
 import { useInView } from "../../lib/hooks/useInView";
+import { Link } from "react-scroll";
 
 interface PriceItemProps {
   item: PriceItem;
@@ -29,7 +30,9 @@ const PriceItemComponent = ({ item }: PriceItemProps) => {
         </div>
         <div className="price-dots"></div>
         <div className="price-number">
-          <div className="text-base font-normal">{formatPrice(item.price, item.prefix)}</div>
+          <div className="text-base font-normal">
+            {formatPrice(item.price, item.prefix)}
+          </div>
         </div>
       </div>
     </li>
@@ -77,11 +80,7 @@ const Prices = () => {
   }, []);
 
   return (
-    <section
-      ref={ref}
-      id="price"
-      className="price-section"
-    >
+    <section ref={ref} id="price" className="price-section">
       <div className="px-2 py-20 mx-auto">
         <h1 className="sm:text-5xl text-4xl font-normal mb-4 text-center">
           Наши цены
@@ -152,6 +151,23 @@ const Prices = () => {
             </div>
           </>
         )}
+        <div
+          className={`animate-in animate-from-bottom animate-delay-500 w-full text-center ${
+            isInView ? "is-visible" : ""
+          }`}
+        >
+          <Link
+            to="contacts"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            href="#contacts"
+            className="mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-normal rounded-sm text-2xl px-5 py-2.5 text-center my-5 transition-all duration-300 ease-in-out inline-block"
+          >
+            Записаться
+          </Link>
+        </div>
       </div>
     </section>
   );

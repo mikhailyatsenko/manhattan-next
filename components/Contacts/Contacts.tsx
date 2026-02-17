@@ -68,7 +68,7 @@ const Contacts = () => {
                 />
               </a>
               <a 
-                href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+"
                 className="inline-flex items-center justify-center p-1"
                 aria-label="Написать в WhatsApp"
               >
@@ -81,7 +81,7 @@ const Contacts = () => {
                 />
               </a>
               <a 
-                href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                href="https://t.me/manhattan_beauty_bar?text=Здравствуйте, хочу записаться "
                 className="inline-flex items-center justify-center p-1"
                 aria-label="Написать в Telegram"
               >
@@ -97,7 +97,7 @@ const Contacts = () => {
             <div className="flex flex-col mt-4 gap-2 w-full max-w-sm">
               <a
                 id="button-whatsapp"
-                href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+"
                 className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all duration-300 ease-in-out no-underline"
               >
                 Записаться через {" "}
@@ -114,7 +114,7 @@ const Contacts = () => {
               </a>
               <a
                 id="button-telegram"
-                href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                href="https://t.me/manhattan_beauty_bar?text=Здравствуйте, хочу записаться "
                 className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-sky-300 to-blue-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-sky-200 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all ease-in-out no-underline"
               >
                 Записаться через {" "}

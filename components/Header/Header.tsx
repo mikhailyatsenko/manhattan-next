@@ -71,7 +71,7 @@ const Header = () => {
             </div>
             <div className="md:hidden items-center grow gap-2 justify-end flex text-3xl z-[6] leading-4">
               <a 
-                href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+"
                 className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
                 aria-label="Написать в WhatsApp"
               >
@@ -83,7 +83,7 @@ const Header = () => {
                 />
               </a>
               <a 
-                href="https://t.me/+79263948050?text=Здравствуйте%2C+хочу+записаться+на+маникюр.+"
+                href="https://t.me/manhattan_beauty_bar?text=Здравствуйте, хочу записаться "
                 className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] p-2"
                 aria-label="Написать в Telegram"
               >

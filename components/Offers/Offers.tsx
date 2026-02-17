@@ -65,8 +65,15 @@ const Offers = () => {
                   </div>
                   <p className="sm:text-2xl text-xl">
                     <strong>Дарим скидку 10% в День Рождения</strong>, а так же
-                    за 2 дня до и после.
+                    за 2 дня до и после
                   </p>
+                  <div className=" bg-gray-300/20 p-1 w-fit text-center mt-8 my-0 mx-auto">
+                    <p className="text-center text-base">
+                      <strong>
+                        ⚠️ Скидка не распространяется на услуги подолога.
+                      </strong>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

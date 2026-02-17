@@ -12,7 +12,7 @@ const About = () => {
       id="about"
       className="py-20 years15-section relative"
     >
-      <div className="container">
+      <div className="container sm:px-2 xl:px-10">
         <div className="flex justify-center items-center flex-wrap z-[2] relative">
           <div
             className={` rounded-md overflow-hidden md:w-1/2 w-full mb-10 md:mb-0 md:m-0 -m-36 overflow-hidden animate-in animate-from-right shadow-[1px_-1px_10px_#5b4d4ae3] ${
