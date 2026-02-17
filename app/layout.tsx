@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import "./App.scss";
+import YandexMetrika from "@/components/YandexMetrika/YandexMetrika";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin", "cyrillic"],
@@ -73,7 +74,10 @@ export default function RootLayout({
           fetchPriority="high"
         />
       </head>
-      <body className={sourceSerif.className}>{children}</body>
+      <body className={sourceSerif.className}>
+        {children}
+        <YandexMetrika />
+      </body>
     </html>
   );
 }
