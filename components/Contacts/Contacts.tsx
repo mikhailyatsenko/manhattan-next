@@ -39,8 +39,8 @@ const Contacts = () => {
             </p>
 
             <p className="sm:text-2xl text-2xl mb-1">
-              <a 
-                className="sm:ml-3 inline-flex items-center gap-1" 
+              <a
+                className="sm:ml-3 inline-flex items-center gap-1"
                 href="tel:+79263948050"
               >
                 8 (985) 411-43-54
@@ -53,21 +53,26 @@ const Contacts = () => {
                 />
               </a>
             </p>
-            <p className="sm:text-2xl text-2xl mb-1 flex flex-wrap items-center gap-2">
-              <a 
-                className="sm:ml-3 inline-flex items-center gap-1" 
+            <p className="sm:text-2xl text-2xl mb-1 flex flex-nowrap items-center">
+              <a
+                className="sm:ml-3 inline-flex text-nowrap items-center gap-0.5"
                 href="tel:+79263948050"
               >
                 8 (926) 394-80-50
+              </a>
+              <a
+                className="inline-flex items-center justify-center p-1"
+                href="tel:+79263948050"
+              >
                 <Image
-                  style={{ display: "inline", margin: "4px" }}
+                  style={{ display: "inline" }}
                   src={phoneNormalIcon}
                   width={28}
                   height={28}
                   alt="Phone"
                 />
               </a>
-              <a 
+              <a
                 href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+"
                 className="inline-flex items-center justify-center p-1"
                 aria-label="Написать в WhatsApp"
@@ -80,7 +85,7 @@ const Contacts = () => {
                   alt="WhatsApp"
                 />
               </a>
-              <a 
+              <a
                 href="https://t.me/manhattan_beauty_bar?text=Здравствуйте, хочу записаться "
                 className="inline-flex items-center justify-center p-1"
                 aria-label="Написать в Telegram"
@@ -100,7 +105,7 @@ const Contacts = () => {
                 href="https://api.whatsapp.com/send/?phone=79263948050&text=Здравствуйте%2C+хочу+записаться+"
                 className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all duration-300 ease-in-out no-underline"
               >
-                Записаться через {" "}
+                Записаться через{" "}
                 <span className="text-nowrap inline-flex gap-1">
                   WhatsApp
                   <Image
@@ -117,7 +122,7 @@ const Contacts = () => {
                 href="https://t.me/manhattan_beauty_bar?text=Здравствуйте, хочу записаться "
                 className="w-full animate-pulse text-darkbrown bg-gradient-to-r from-sky-300 to-blue-200 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-sky-200 font-normal rounded-lg text-xl px-5 py-2.5 text-center my-2 transition-all ease-in-out no-underline"
               >
-                Записаться через {" "}
+                Записаться через{" "}
                 <span className="text-nowrap inline-flex gap-1">
                   Telegram
                   <Image
